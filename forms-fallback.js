@@ -17,8 +17,8 @@
       var topic = (form.dataset.mailSubject || form.getAttribute('name') || 'Message')
         .replace(/[-_]/g, ' ');
       var subject = 'AstroGuide — ' + topic;
-      var body = buildBody(data) + '\n\n— Sent from astroguide.app';
-      var href = 'mailto:support@astroguide.app'
+      var body = buildBody(data) + '\n\n— Sent from astroguides.app';
+      var href = 'mailto:support@astroguides.app'
         + '?subject=' + encodeURIComponent(subject)
         + '&body=' + encodeURIComponent(body);
       window.location.href = href;
