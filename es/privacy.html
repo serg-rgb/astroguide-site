@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es" data-screen-label="02 Privacidad">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Privacidad · AstroGuide</title>
+  <meta name="description" content="Cómo AstroGuide recopila, almacena y protege tus datos de nacimiento y entradas del diario."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Forum&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../tokens.css"/>
+  <link rel="stylesheet" href="../landing.css"/>
+</head>
+<body>
+<svg class="starfield-bg" viewBox="0 0 1440 2400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs><radialGradient id="starGrad"><stop offset="0%" stop-color="#E8D29E"/><stop offset="100%" stop-color="#E8D29E" stop-opacity="0"/></radialGradient></defs>
+  <g id="starfield-stars"></g>
+</svg>
+<div class="corner-vignette"></div>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="sigil" viewBox="0 0 40 40">
+    <g fill="none" stroke="currentColor">
+      <circle cx="20" cy="20" r="18" stroke-width="0.5" opacity="0.4"/>
+      <circle cx="20" cy="20" r="13" stroke-width="0.4" opacity="0.3"/>
+      <path d="M 20 4 L 22 18 L 36 20 L 22 22 L 20 36 L 18 22 L 4 20 L 18 18 Z" fill="currentColor" fill-opacity="0.9" stroke-width="0.5"/>
+    </g>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="logo" href="index.html"><svg class="logo__sigil" style="color: var(--gold)"><use href="#sigil"/></svg><span class="logo__mark">AstroGuide</span></a>
+    <div class="site-header__right">
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="ai-disclosure.html">Sobre la IA</a>
+        <a href="support.html">Soporte</a>
+      </nav>
+      <div class="lang-switch lang-switch--header" role="group" aria-label="Idioma">
+        <a class="lang-switch__item" href="../en/privacy.html" hreflang="en">EN</a>
+        <a class="lang-switch__item lang-switch__item--active" aria-current="page">ES</a>
+        <a class="lang-switch__item" href="../ru/privacy.html" hreflang="ru">RU</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="wrap">
+    <header class="legal__head">
+      <div class="legal__eyebrow">LEGAL</div>
+      <h1 class="legal__title">Política de Privacidad</h1>
+      <div class="legal__updated">Vigente desde el 14 de mayo de 2026</div>
+    </header>
+
+    <div class="legal__body">
+      <aside class="legal__toc" aria-label="Índice">
+        <div class="legal__toc-title">En esta página</div>
+        <a href="#what">Qué recopilamos</a>
+        <a href="#why">Por qué lo recopilamos</a>
+        <a href="#storage">Dónde vive</a>
+        <a href="#third-parties">Terceros</a>
+        <a href="#rights">Tus derechos</a>
+        <a href="#children">Menores</a>
+        <a href="#contact">Contacto</a>
+      </aside>
+
+      <article class="legal__article">
+        <p><em>Esta página es el resumen en español llano. Es la política en sí, escrita en un lenguaje que una persona puede leer de verdad. Si prefieres una versión formal más larga en papel con membrete, escríbenos a <a href="mailto:support@astroguide.app">support@astroguide.app</a> y te la enviaremos.</em></p>
+
+        <h2 id="what">Qué recopilamos</h2>
+        <p>AstroGuide recopila solo lo necesario para dibujar tu carta y recordar lo que escribes en tu diario lunar:</p>
+        <ul>
+          <li><strong>Datos de nacimiento</strong> — fecha, hora (opcional) y lugar de nacimiento.</li>
+          <li><strong>Nombre mostrado</strong> — cómo llamarte dentro de la app.</li>
+          <li><strong>Entradas del diario</strong> — texto que escribes tú, en tu propio dispositivo.</li>
+          <li><strong>Correo de la cuenta</strong> — solo si decides hacer copia de seguridad en la nube.</li>
+          <li><strong>Datos técnicos</strong> — registros de crash anónimos y un ID de instalación único, usados para que la app no se rompa.</li>
+        </ul>
+        <p><strong>No</strong> recopilamos contactos, ubicación (más allá de la ciudad de nacimiento), fotos, micrófono, calendario, historial de navegación, ni nada de tus otras apps.</p>
+
+        <h2 id="why">Por qué lo recopilamos</h2>
+        <p>Los datos de nacimiento y el nombre mostrado son necesarios para la función central de la app — dibujar una carta personal. Las entradas del diario existen para que el diario funcione. El correo de la cuenta existe para que la copia de seguridad encuentre tus datos cuando reinstales. Los registros de crash nos ayudan a arreglar bugs que de otra forma nunca veríamos.</p>
+        <blockquote>Si un dato no es necesario para que la app cumpla su función, no lo pedimos.</blockquote>
+
+        <h2 id="storage">Dónde vive</h2>
+        <p>Por defecto, todo se queda en tu teléfono. Cifrado en reposo usando el almacén de claves del sistema operativo.</p>
+        <p>Si activas la copia de seguridad en la nube, tus datos se envían por HTTPS a nuestros servidores (alojados en la Unión Europea), se cifran en reposo y se vinculan solo a tu cuenta. Podemos leerlos con el propósito de restaurarlos en tu próximo dispositivo. No los leemos para ningún otro propósito.</p>
+
+        <h2 id="third-parties">Terceros</h2>
+        <p>Usamos tres servicios externos, listados aquí para que sepas exactamente quién ve qué:</p>
+        <ul>
+          <li><strong>OpenRouter</strong> — recibe posiciones y aspectos de la carta anonimizados y estructurados, y devuelve prosa. <em>No</em> recibe tu nombre, correo, fecha de nacimiento ni ninguna información identificativa. El mismo prompt produciría la misma prosa para cualquier persona con la misma carta.</li>
+          <li><strong>Google Play Billing</strong> — gestiona las compras de suscripción. Reciben un token de compra; nosotros recibimos una confirmación. Tu carta nunca la ven.</li>
+          <li><strong>Vercel Analytics</strong> — agrega conteos anónimos de visitas para este sitio web. Sin cookies, sin datos personales.</li>
+        </ul>
+        <p>No hemos vendido, no vendemos y no venderemos tus datos a anunciantes ni a brokers de datos.</p>
+
+        <h2 id="rights">Tus derechos</h2>
+        <p>En cualquier momento puedes:</p>
+        <ul>
+          <li>Ver todo lo que tenemos sobre ti (en la app: Ajustes → Acerca de → Exportar mis datos).</li>
+          <li>Corregirlo.</li>
+          <li>Eliminarlo — ver <a href="account-deletion.html">Eliminación de cuenta</a>.</li>
+          <li>Retirar el consentimiento para la copia en la nube — tus datos se quedan en tu dispositivo.</li>
+        </ul>
+        <p>Si vives en una jurisdicción con derechos más fuertes (GDPR, CCPA, LGPD u otras), se aplican.</p>
+
+        <h2 id="children">Menores</h2>
+        <p>AstroGuide no está pensada para menores de 16 años. No recopilamos a sabiendas datos de menores. Si descubrimos que lo hemos hecho, los eliminamos.</p>
+
+        <h2 id="contact">Contacto</h2>
+        <p>Preguntas, solicitudes o quejas: <a href="mailto:support@astroguide.app">support@astroguide.app</a>. Procuramos responder en cinco días laborables.</p>
+
+        <hr/>
+        <p><em>Esta política puede cambiar. Cuando cambie, mostraremos aquí la nueva fecha de vigencia y te avisaremos en la app la próxima vez que la abras. Los cambios materiales requerirán consentimiento renovado.</em></p>
+      </article>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-bottom">
+    <span>AstroGuide · 2026</span>
+    <span class="lang-switch"><a class="lang-switch__item" href="../en/privacy.html" hreflang="en">EN</a><a class="lang-switch__item lang-switch__item--active" aria-current="page">ES</a><a class="lang-switch__item" href="../ru/privacy.html" hreflang="ru">RU</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const svg=document.getElementById('starfield-stars');if(!svg)return;
+  let s=11,rng=()=>(s=(s*9301+49297)%233280)/233280;let out='';
+  for(let i=0;i<100;i++){const x=(rng()*1440)|0,y=(rng()*2400)|0,r=rng()<0.08?(1.4+rng()).toFixed(1):(0.4+rng()*0.8).toFixed(2);
+    const op=(0.25+rng()*0.55).toFixed(2),dur=(3+rng()*5).toFixed(1),delay=(rng()*6).toFixed(1);
+    out+=`<circle cx="${x}" cy="${y}" r="${r}" fill="url(#starGrad)" opacity="${op}"><animate attributeName="opacity" values="${(op*0.4).toFixed(2)};${op};${(op*0.4).toFixed(2)}" dur="${dur}s" begin="-${delay}s" repeatCount="indefinite"/></circle>`}
+  svg.innerHTML=out;
+})();
+(function(){
+  const links=[...document.querySelectorAll('.legal__toc a')];
+  const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=links.find(l=>l.getAttribute('href')==='#'+e.target.id);if(a)a.classList.add('active')}})},{rootMargin:'-30% 0px -60% 0px'});
+  sections.forEach(s=>s&&io.observe(s));
+})();
+</script>
+</body>
+</html>

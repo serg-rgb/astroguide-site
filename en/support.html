@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-screen-label="05 Support">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Support · AstroGuide</title>
+<meta name="description" content="Reach the AstroGuide team. FAQ, contact form, and email."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Forum&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../tokens.css"/><link rel="stylesheet" href="../landing.css"/>
+<script defer src="../forms-fallback.js"></script>
+</head>
+<body>
+<svg class="starfield-bg" viewBox="0 0 1440 2400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><radialGradient id="starGrad"><stop offset="0%" stop-color="#E8D29E"/><stop offset="100%" stop-color="#E8D29E" stop-opacity="0"/></radialGradient></defs>
+<g id="starfield-stars"></g></svg>
+<div class="corner-vignette"></div>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="sigil" viewBox="0 0 40 40"><g fill="none" stroke="currentColor"><circle cx="20" cy="20" r="18" stroke-width="0.5" opacity="0.4"/><circle cx="20" cy="20" r="13" stroke-width="0.4" opacity="0.3"/><path d="M 20 4 L 22 18 L 36 20 L 22 22 L 20 36 L 18 22 L 4 20 L 18 18 Z" fill="currentColor" fill-opacity="0.9" stroke-width="0.5"/></g></symbol>
+</svg>
+
+<header class="site-header"><div class="wrap site-header__inner">
+<a class="logo" href="index.html"><svg class="logo__sigil" style="color: var(--gold)"><use href="#sigil"/></svg><span class="logo__mark">AstroGuide</span></a>
+<div class="site-header__right">
+<nav class="nav"><a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+<div class="lang-switch lang-switch--header" role="group" aria-label="Language">
+  <a class="lang-switch__item lang-switch__item--active" aria-current="page">EN</a>
+  <a class="lang-switch__item" href="../es/support.html" hreflang="es">ES</a>
+  <a class="lang-switch__item" href="../ru/support.html" hreflang="ru">RU</a>
+</div>
+</div>
+
+</div></header>
+
+<main class="legal"><div class="wrap wrap--read">
+<header class="legal__head">
+<div class="legal__eyebrow">HOW CAN WE HELP</div>
+<h1 class="legal__title">Support</h1>
+<p class="legal__updated">Real humans · usually within 1 working day</p>
+</header>
+
+<article class="legal__article">
+
+<h2>Write to us</h2>
+<p>The fastest way to reach the team is email. We are a small group; the same people who build the app answer the messages.</p>
+<p><a href="mailto:support@astroguide.app" style="font-family: var(--f-forum); font-size: 18px; letter-spacing: 0.12em;">support@astroguide.app</a></p>
+
+<h2>Or use the form</h2>
+<div class="form-card">
+<form name="support" action="/api/support" method="POST" novalidate>
+<div class="form-card__field">
+<label for="topic">What's this about</label>
+<select id="topic" name="topic">
+<option>Bug or crash</option>
+<option>Subscription / billing</option>
+<option>Chart looks wrong</option>
+<option>Feature request</option>
+<option>Press / partnership</option>
+<option>Something else</option>
+</select>
+</div>
+<div class="form-card__field">
+<label for="email">Your email</label>
+<input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com"/>
+</div>
+<div class="form-card__field">
+<label for="message">Message</label>
+<textarea id="message" name="message" required placeholder="Tell us what's going on. The more detail, the better — but a sentence is fine too."></textarea>
+</div>
+<!-- Cloudflare Turnstile widget slot — wired during the Next.js engineering pass. -->
+<div class="form-card__captcha" data-turnstile-slot aria-hidden="true">
+  <span class="form-card__captcha-note">Bot check appears here once deployed.</span>
+</div>
+<div class="form-card__field" style="margin-top: var(--sp-6)">
+<button class="btn-primary" type="submit">Send message</button>
+</div>
+</form>
+</div>
+
+<h2>Common questions</h2>
+
+<h3>I can't find an aspect / planet / detail in the app</h3>
+<p>The Android app currently ships with the ten classical bodies (Sun through Pluto) plus the Lunar Nodes and Chiron. Asteroids, Arabic parts, and progressed charts are on the roadmap. <em>Tell us which ones matter most to you.</em></p>
+
+<h3>My birth time isn't on my certificate. What now?</h3>
+<p>Skip the time field. The chart still works — we'll show which parts (Ascendant, Midheaven, houses) become approximate, and present them differently from the parts that are certain.</p>
+
+<h3>I want to migrate from another astrology app</h3>
+<p>We're working on import for Astrolog, AstroSeek, and Co-Star data formats. If you have a chart you'd like to bring over today, email us — we can do it manually.</p>
+
+<h3>Cancel my subscription</h3>
+<p>Subscriptions live on the store side. <strong>Google Play app → menu → Subscriptions → AstroGuide → Cancel</strong>. Cancelling there immediately stops auto-renewal; the premium tier stays active until the end of the period you already paid for.</p>
+
+<h3>How do I delete my account?</h3>
+<p>See <a href="account-deletion.html">Account deletion</a>. It takes us under thirty days; usually under forty-eight hours.</p>
+
+<hr/>
+<p><em>If you're stuck and the app feels frustrating — please write. A bad astrology app helps no one, and we'd rather know.</em></p>
+</article>
+</div></main>
+
+<footer class="site-footer"><div class="wrap footer-bottom">
+<span>AstroGuide · 2026</span>
+<span class="lang-switch"><a class="lang-switch__item lang-switch__item--active" aria-current="page">EN</a><a class="lang-switch__item" href="../es/support.html" hreflang="es">ES</a><a class="lang-switch__item" href="../ru/support.html" hreflang="ru">RU</a></span>
+</div></footer>
+
+<script>
+(function(){const svg=document.getElementById('starfield-stars');if(!svg)return;let s=37,rng=()=>(s=(s*9301+49297)%233280)/233280;let out='';for(let i=0;i<100;i++){const x=(rng()*1440)|0,y=(rng()*2400)|0,r=rng()<0.08?(1.4+rng()).toFixed(1):(0.4+rng()*0.8).toFixed(2);const op=(0.25+rng()*0.55).toFixed(2),dur=(3+rng()*5).toFixed(1),delay=(rng()*6).toFixed(1);out+=`<circle cx="${x}" cy="${y}" r="${r}" fill="url(#starGrad)" opacity="${op}"><animate attributeName="opacity" values="${(op*0.4).toFixed(2)};${op};${(op*0.4).toFixed(2)}" dur="${dur}s" begin="-${delay}s" repeatCount="indefinite"/></circle>`}svg.innerHTML=out;})();
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" data-screen-label="04 Account deletion">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Account Deletion · AstroGuide</title>
+<meta name="description" content="Request deletion of your AstroGuide account and all associated data."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Forum&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../tokens.css"/><link rel="stylesheet" href="../landing.css"/>
+<script defer src="../forms-fallback.js"></script>
+</head>
+<body>
+<svg class="starfield-bg" viewBox="0 0 1440 2400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><radialGradient id="starGrad"><stop offset="0%" stop-color="#E8D29E"/><stop offset="100%" stop-color="#E8D29E" stop-opacity="0"/></radialGradient></defs>
+<g id="starfield-stars"></g></svg>
+<div class="corner-vignette"></div>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="sigil" viewBox="0 0 40 40"><g fill="none" stroke="currentColor"><circle cx="20" cy="20" r="18" stroke-width="0.5" opacity="0.4"/><circle cx="20" cy="20" r="13" stroke-width="0.4" opacity="0.3"/><path d="M 20 4 L 22 18 L 36 20 L 22 22 L 20 36 L 18 22 L 4 20 L 18 18 Z" fill="currentColor" fill-opacity="0.9" stroke-width="0.5"/></g></symbol>
+</svg>
+
+<header class="site-header"><div class="wrap site-header__inner">
+<a class="logo" href="index.html"><svg class="logo__sigil" style="color: var(--gold)"><use href="#sigil"/></svg><span class="logo__mark">AstroGuide</span></a>
+<div class="site-header__right">
+<nav class="nav"><a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav>
+<div class="lang-switch lang-switch--header" role="group" aria-label="Language">
+  <a class="lang-switch__item lang-switch__item--active" aria-current="page">EN</a>
+  <a class="lang-switch__item" href="../es/account-deletion.html" hreflang="es">ES</a>
+  <a class="lang-switch__item" href="../ru/account-deletion.html" hreflang="ru">RU</a>
+</div>
+</div>
+</div></header>
+
+<main class="legal"><div class="wrap wrap--read">
+<header class="legal__head">
+<div class="legal__eyebrow">YOUR DATA</div>
+<h1 class="legal__title">Delete your account</h1>
+<p class="legal__updated">Effective May 14, 2026</p>
+</header>
+
+<article class="legal__article">
+<p><em>You can leave at any time. We'll take less than thirty days to be gone from our servers, and we don't keep "just-in-case" backups of your personal data.</em></p>
+
+<h2>The fastest way: from inside the app</h2>
+<p>Open AstroGuide → <strong>Settings → About → Delete account</strong>. Confirm twice. That's it. Your chart, journal entries, and account email vanish from your device and from our servers within thirty days.</p>
+
+<h2>If you've already uninstalled</h2>
+<p>If the app is gone from your phone and you still want your cloud data deleted, fill the form below. We'll match it to your account by email, delete everything, and write to confirm.</p>
+
+<div class="form-card">
+<form name="account-deletion" action="/api/account-deletion" method="POST" novalidate>
+<div class="form-card__field">
+<label for="email">Email used in the app</label>
+<input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com"/>
+</div>
+<div class="form-card__field">
+<label for="displayName">Name or alias used in the app (optional)</label>
+<input id="displayName" name="displayName" type="text" autocomplete="name" placeholder="To help us find your record faster."/>
+</div>
+<div class="form-card__field">
+<label for="reason">Anything you'd like us to know (optional)</label>
+<textarea id="reason" name="reason" placeholder="A short note, if you'd like to tell us why."></textarea>
+</div>
+<div class="form-card__field">
+<label class="checkbox">
+<input type="checkbox" name="confirm" required/>
+<span>I understand my data will be permanently deleted within thirty days and cannot be recovered.</span>
+</label>
+</div>
+<!-- Cloudflare Turnstile widget slot — wired during the Next.js engineering pass. -->
+<div class="form-card__captcha" data-turnstile-slot aria-hidden="true">
+  <span class="form-card__captcha-note">Bot check appears here once deployed.</span>
+</div>
+<div class="form-card__field" style="margin-top: var(--sp-6)">
+<button class="btn-primary" type="submit">Request deletion</button>
+</div>
+<p class="muted" style="font-size: 12px; margin-top: var(--sp-4); line-height: 1.6">
+By submitting, you ask us to permanently delete the AstroGuide account associated with the email above, along with all chart data, journal entries, and subscription records. This is final. Requests are processed within 72 hours and completed within 30 days.
+</p>
+</form>
+</div>
+
+<h2>What gets deleted</h2>
+<ul>
+<li>Your name, birth data, and any aliases.</li>
+<li>Your account email and login credentials.</li>
+<li>Every journal entry and synastry partner you saved.</li>
+<li>Your full natal chart and any cached forecasts.</li>
+<li>Your subscription record (cancellation is handled by the store separately — see below).</li>
+</ul>
+
+<h2>What can't be deleted from here</h2>
+<ul>
+<li><strong>Anonymized analytics</strong> — page views on this website, with no link to you. Already aggregated; nothing to delete on your end.</li>
+<li><strong>Subscription billing records at Google Play</strong> — those live on the store side. To cancel an active subscription, do it through Google Play's Subscriptions screen. Deleting your AstroGuide account doesn't auto-cancel a Play subscription.</li>
+<li><strong>Legal records we are required to keep</strong> — payment confirmations are kept for tax-law-mandated periods (usually 7 years), anonymized.</li>
+</ul>
+
+<h2>Timeline</h2>
+<p>From the moment we receive the request: <strong>within thirty days</strong>, usually within forty-eight hours. We'll send a confirmation email. If you change your mind in that window, write back — we can stop the deletion as long as it hasn't yet completed.</p>
+
+<hr/>
+<p><em>If you're deleting because something went wrong, we'd love to hear about it. Reach <a href="mailto:support@astroguide.app">support@astroguide.app</a> directly.</em></p>
+</article>
+</div></main>
+
+<footer class="site-footer"><div class="wrap footer-bottom">
+<span>AstroGuide · 2026</span>
+<span class="lang-switch"><a class="lang-switch__item lang-switch__item--active" aria-current="page">EN</a><a class="lang-switch__item" href="../es/account-deletion.html" hreflang="es">ES</a><a class="lang-switch__item" href="../ru/account-deletion.html" hreflang="ru">RU</a></span>
+</div></footer>
+
+<script>
+(function(){const svg=document.getElementById('starfield-stars');if(!svg)return;let s=29,rng=()=>(s=(s*9301+49297)%233280)/233280;let out='';for(let i=0;i<100;i++){const x=(rng()*1440)|0,y=(rng()*2400)|0,r=rng()<0.08?(1.4+rng()).toFixed(1):(0.4+rng()*0.8).toFixed(2);const op=(0.25+rng()*0.55).toFixed(2),dur=(3+rng()*5).toFixed(1),delay=(rng()*6).toFixed(1);out+=`<circle cx="${x}" cy="${y}" r="${r}" fill="url(#starGrad)" opacity="${op}"><animate attributeName="opacity" values="${(op*0.4).toFixed(2)};${op};${(op*0.4).toFixed(2)}" dur="${dur}s" begin="-${delay}s" repeatCount="indefinite"/></circle>`}svg.innerHTML=out;})();
+</script>
+</body>
+</html>

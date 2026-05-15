@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es" data-screen-label="05 Soporte">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Soporte · AstroGuide</title>
+<meta name="description" content="Contacta con el equipo de AstroGuide. FAQ, formulario y correo."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Forum&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../tokens.css"/><link rel="stylesheet" href="../landing.css"/>
+<script defer src="../forms-fallback.js"></script>
+</head>
+<body>
+<svg class="starfield-bg" viewBox="0 0 1440 2400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><radialGradient id="starGrad"><stop offset="0%" stop-color="#E8D29E"/><stop offset="100%" stop-color="#E8D29E" stop-opacity="0"/></radialGradient></defs>
+<g id="starfield-stars"></g></svg>
+<div class="corner-vignette"></div>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="sigil" viewBox="0 0 40 40"><g fill="none" stroke="currentColor"><circle cx="20" cy="20" r="18" stroke-width="0.5" opacity="0.4"/><circle cx="20" cy="20" r="13" stroke-width="0.4" opacity="0.3"/><path d="M 20 4 L 22 18 L 36 20 L 22 22 L 20 36 L 18 22 L 4 20 L 18 18 Z" fill="currentColor" fill-opacity="0.9" stroke-width="0.5"/></g></symbol>
+</svg>
+
+<header class="site-header"><div class="wrap site-header__inner">
+<a class="logo" href="index.html"><svg class="logo__sigil" style="color: var(--gold)"><use href="#sigil"/></svg><span class="logo__mark">AstroGuide</span></a>
+<div class="site-header__right">
+<nav class="nav"><a href="index.html">Inicio</a><a href="privacy.html">Privacidad</a><a href="terms.html">Términos</a></nav>
+<div class="lang-switch lang-switch--header" role="group" aria-label="Idioma">
+  <a class="lang-switch__item" href="../en/support.html" hreflang="en">EN</a>
+  <a class="lang-switch__item lang-switch__item--active" aria-current="page">ES</a>
+  <a class="lang-switch__item" href="../ru/support.html" hreflang="ru">RU</a>
+</div>
+</div>
+</div></header>
+
+<main class="legal"><div class="wrap wrap--read">
+<header class="legal__head">
+<div class="legal__eyebrow">¿EN QUÉ PODEMOS AYUDARTE?</div>
+<h1 class="legal__title">Soporte</h1>
+<p class="legal__updated">Humanos reales · normalmente en 1 día laboral</p>
+</header>
+
+<article class="legal__article">
+
+<h2>Escríbenos</h2>
+<p>La forma más rápida de llegar al equipo es por correo. Somos un grupo pequeño; las mismas personas que construyen la app responden los mensajes.</p>
+<p><a href="mailto:support@astroguide.app" style="font-family: var(--f-forum); font-size: 18px; letter-spacing: 0.12em;">support@astroguide.app</a></p>
+
+<h2>O usa el formulario</h2>
+<div class="form-card">
+<form name="support" action="/api/support" method="POST" novalidate>
+<div class="form-card__field">
+<label for="topic">¿De qué se trata?</label>
+<select id="topic" name="topic">
+<option>Bug o crash</option>
+<option>Suscripción / facturación</option>
+<option>La carta se ve mal</option>
+<option>Petición de función</option>
+<option>Prensa / colaboración</option>
+<option>Otra cosa</option>
+</select>
+</div>
+<div class="form-card__field">
+<label for="email">Tu correo</label>
+<input id="email" name="email" type="email" required autocomplete="email" placeholder="tu@example.com"/>
+</div>
+<div class="form-card__field">
+<label for="message">Mensaje</label>
+<textarea id="message" name="message" required placeholder="Cuéntanos qué pasa. Cuanto más detalle, mejor — pero una frase también vale."></textarea>
+</div>
+<!-- Cloudflare Turnstile widget slot — wired during the Next.js engineering pass. -->
+<div class="form-card__captcha" data-turnstile-slot aria-hidden="true">
+  <span class="form-card__captcha-note">El bot-check aparece aquí una vez desplegado.</span>
+</div>
+<div class="form-card__field" style="margin-top: var(--sp-6)">
+<button class="btn-primary" type="submit">Enviar mensaje</button>
+</div>
+</form>
+</div>
+
+<h2>Preguntas frecuentes</h2>
+
+<h3>No encuentro un aspecto / planeta / detalle en la app</h3>
+<p>La app de Android trae actualmente los diez cuerpos clásicos (del Sol a Plutón), más los Nodos Lunares y Quirón. Asteroides, partes árabes y cartas progresadas están en la hoja de ruta. <em>Dinos cuáles te importan más.</em></p>
+
+<h3>Mi hora de nacimiento no está en mi certificado. ¿Y ahora?</h3>
+<p>Salta el campo de la hora. La carta sigue funcionando — te mostraremos qué partes (Ascendente, Mediocielo, casas) quedan aproximadas, y las presentaremos distintas de las partes que sí son seguras.</p>
+
+<h3>Quiero migrar desde otra app de astrología</h3>
+<p>Estamos trabajando en importadores para los formatos de Astrolog, AstroSeek y Co-Star. Si tienes una carta que quieras traer hoy, escríbenos — la pasamos a mano.</p>
+
+<h3>Cancelar mi suscripción</h3>
+<p>Las suscripciones viven del lado de la tienda. <strong>App de Google Play → menú → Suscripciones → AstroGuide → Cancelar</strong>. Cancelar ahí detiene de inmediato la renovación automática; el nivel premium sigue activo hasta el final del período que ya pagaste.</p>
+
+<h3>¿Cómo elimino mi cuenta?</h3>
+<p>Ver <a href="account-deletion.html">Eliminación de cuenta</a>. Nos lleva menos de treinta días; normalmente menos de cuarenta y ocho horas.</p>
+
+<hr/>
+<p><em>Si estás atascado y la app te frustra — por favor, escribe. Una mala app de astrología no le sirve a nadie, y preferimos saberlo.</em></p>
+</article>
+</div></main>
+
+<footer class="site-footer"><div class="wrap footer-bottom">
+<span>AstroGuide · 2026</span>
+<span class="lang-switch"><a class="lang-switch__item" href="../en/support.html" hreflang="en">EN</a><a class="lang-switch__item lang-switch__item--active" aria-current="page">ES</a><a class="lang-switch__item" href="../ru/support.html" hreflang="ru">RU</a></span>
+</div></footer>
+
+<script>
+(function(){const svg=document.getElementById('starfield-stars');if(!svg)return;let s=37,rng=()=>(s=(s*9301+49297)%233280)/233280;let out='';for(let i=0;i<100;i++){const x=(rng()*1440)|0,y=(rng()*2400)|0,r=rng()<0.08?(1.4+rng()).toFixed(1):(0.4+rng()*0.8).toFixed(2);const op=(0.25+rng()*0.55).toFixed(2),dur=(3+rng()*5).toFixed(1),delay=(rng()*6).toFixed(1);out+=`<circle cx="${x}" cy="${y}" r="${r}" fill="url(#starGrad)" opacity="${op}"><animate attributeName="opacity" values="${(op*0.4).toFixed(2)};${op};${(op*0.4).toFixed(2)}" dur="${dur}s" begin="-${delay}s" repeatCount="indefinite"/></circle>`}svg.innerHTML=out;})();
+</script>
+</body>
+</html>

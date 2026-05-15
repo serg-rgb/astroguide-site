@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es" data-screen-label="04 Eliminación de cuenta">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Eliminación de cuenta · AstroGuide</title>
+<meta name="description" content="Solicita la eliminación de tu cuenta de AstroGuide y de todos los datos asociados."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Forum&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../tokens.css"/><link rel="stylesheet" href="../landing.css"/>
+<script defer src="../forms-fallback.js"></script>
+</head>
+<body>
+<svg class="starfield-bg" viewBox="0 0 1440 2400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs><radialGradient id="starGrad"><stop offset="0%" stop-color="#E8D29E"/><stop offset="100%" stop-color="#E8D29E" stop-opacity="0"/></radialGradient></defs>
+<g id="starfield-stars"></g></svg>
+<div class="corner-vignette"></div>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="sigil" viewBox="0 0 40 40"><g fill="none" stroke="currentColor"><circle cx="20" cy="20" r="18" stroke-width="0.5" opacity="0.4"/><circle cx="20" cy="20" r="13" stroke-width="0.4" opacity="0.3"/><path d="M 20 4 L 22 18 L 36 20 L 22 22 L 20 36 L 18 22 L 4 20 L 18 18 Z" fill="currentColor" fill-opacity="0.9" stroke-width="0.5"/></g></symbol>
+</svg>
+
+<header class="site-header"><div class="wrap site-header__inner">
+<a class="logo" href="index.html"><svg class="logo__sigil" style="color: var(--gold)"><use href="#sigil"/></svg><span class="logo__mark">AstroGuide</span></a>
+<div class="site-header__right">
+<nav class="nav"><a href="index.html">Inicio</a><a href="privacy.html">Privacidad</a><a href="support.html">Soporte</a></nav>
+<div class="lang-switch lang-switch--header" role="group" aria-label="Idioma">
+  <a class="lang-switch__item" href="../en/account-deletion.html" hreflang="en">EN</a>
+  <a class="lang-switch__item lang-switch__item--active" aria-current="page">ES</a>
+  <a class="lang-switch__item" href="../ru/account-deletion.html" hreflang="ru">RU</a>
+</div>
+</div>
+</div></header>
+
+<main class="legal"><div class="wrap wrap--read">
+<header class="legal__head">
+<div class="legal__eyebrow">TUS DATOS</div>
+<h1 class="legal__title">Eliminar tu cuenta</h1>
+<p class="legal__updated">Vigente desde el 14 de mayo de 2026</p>
+</header>
+
+<article class="legal__article">
+<p><em>Puedes irte en cualquier momento. Tardaremos menos de treinta días en desaparecer de nuestros servidores, y no guardamos copias de seguridad «por si acaso» de tus datos personales.</em></p>
+
+<h2>La forma más rápida: desde dentro de la app</h2>
+<p>Abre AstroGuide → <strong>Ajustes → Acerca de → Eliminar cuenta</strong>. Confirma dos veces. Listo. Tu carta, las entradas del diario y el correo de la cuenta desaparecen de tu dispositivo y de nuestros servidores en treinta días.</p>
+
+<h2>Si ya desinstalaste la app</h2>
+<p>Si la app ya no está en tu teléfono y aún quieres borrar tus datos en la nube, completa el formulario de abajo. Localizamos tu cuenta por el correo, borramos todo y te escribimos para confirmar.</p>
+
+<div class="form-card">
+<form name="account-deletion" action="/api/account-deletion" method="POST" novalidate>
+<div class="form-card__field">
+<label for="email">Correo usado en la app</label>
+<input id="email" name="email" type="email" required autocomplete="email" placeholder="tu@example.com"/>
+</div>
+<div class="form-card__field">
+<label for="displayName">Nombre o alias usado en la app (opcional)</label>
+<input id="displayName" name="displayName" type="text" autocomplete="name" placeholder="Para ayudarnos a localizar tu registro más rápido."/>
+</div>
+<div class="form-card__field">
+<label for="reason">¿Algo que quieras que sepamos? (opcional)</label>
+<textarea id="reason" name="reason" placeholder="Una nota breve, si quieres contarnos por qué."></textarea>
+</div>
+<div class="form-card__field">
+<label class="checkbox">
+<input type="checkbox" name="confirm" required/>
+<span>Entiendo que mis datos se eliminarán de forma permanente en treinta días y no se podrán recuperar.</span>
+</label>
+</div>
+<!-- Cloudflare Turnstile widget slot — wired during the Next.js engineering pass. -->
+<div class="form-card__captcha" data-turnstile-slot aria-hidden="true">
+  <span class="form-card__captcha-note">El bot-check aparece aquí una vez desplegado.</span>
+</div>
+<div class="form-card__field" style="margin-top: var(--sp-6)">
+<button class="btn-primary" type="submit">Solicitar eliminación</button>
+</div>
+<p class="muted" style="font-size: 12px; margin-top: var(--sp-4); line-height: 1.6">
+Al enviar, nos pides eliminar de forma permanente la cuenta de AstroGuide asociada al correo anterior, junto con todos los datos de la carta, entradas del diario y registros de suscripción. Es definitivo. Las solicitudes se procesan en 72 horas y se completan en 30 días.
+</p>
+</form>
+</div>
+
+<h2>Qué se elimina</h2>
+<ul>
+<li>Tu nombre, datos de nacimiento y cualquier alias.</li>
+<li>Tu correo de cuenta y credenciales de inicio de sesión.</li>
+<li>Cada entrada del diario y cada pareja de sinastría que hayas guardado.</li>
+<li>Tu carta natal completa y los pronósticos en caché.</li>
+<li>Tu registro de suscripción (la cancelación se gestiona por separado desde la tienda — ver abajo).</li>
+</ul>
+
+<h2>Lo que no se puede eliminar desde aquí</h2>
+<ul>
+<li><strong>Analítica anonimizada</strong> — vistas de páginas en este sitio, sin vínculo contigo. Ya agregadas; no hay nada que borrar por tu parte.</li>
+<li><strong>Registros de facturación de Google Play</strong> — viven del lado de la tienda. Para cancelar una suscripción activa, hazlo desde la pantalla de suscripciones de la tienda. Eliminar tu cuenta de AstroGuide no cancela automáticamente la suscripción en Play.</li>
+<li><strong>Registros legales que estamos obligados a conservar</strong> — las confirmaciones de pago se conservan durante los plazos exigidos por la ley fiscal (normalmente 7 años), anonimizadas.</li>
+</ul>
+
+<h2>Plazos</h2>
+<p>Desde el momento en que recibimos la solicitud: <strong>en treinta días</strong>, normalmente en menos de cuarenta y ocho horas. Te enviaremos un correo de confirmación. Si cambias de opinión en esa ventana, escríbenos — podemos detener la eliminación si todavía no ha terminado.</p>
+
+<hr/>
+<p><em>Si estás eliminando porque algo salió mal, nos encantaría saberlo. Escríbenos directo a <a href="mailto:support@astroguide.app">support@astroguide.app</a>.</em></p>
+</article>
+</div></main>
+
+<footer class="site-footer"><div class="wrap footer-bottom">
+<span>AstroGuide · 2026</span>
+<span class="lang-switch"><a class="lang-switch__item" href="../en/account-deletion.html" hreflang="en">EN</a><a class="lang-switch__item lang-switch__item--active" aria-current="page">ES</a><a class="lang-switch__item" href="../ru/account-deletion.html" hreflang="ru">RU</a></span>
+</div></footer>
+
+<script>
+(function(){const svg=document.getElementById('starfield-stars');if(!svg)return;let s=29,rng=()=>(s=(s*9301+49297)%233280)/233280;let out='';for(let i=0;i<100;i++){const x=(rng()*1440)|0,y=(rng()*2400)|0,r=rng()<0.08?(1.4+rng()).toFixed(1):(0.4+rng()*0.8).toFixed(2);const op=(0.25+rng()*0.55).toFixed(2),dur=(3+rng()*5).toFixed(1),delay=(rng()*6).toFixed(1);out+=`<circle cx="${x}" cy="${y}" r="${r}" fill="url(#starGrad)" opacity="${op}"><animate attributeName="opacity" values="${(op*0.4).toFixed(2)};${op};${(op*0.4).toFixed(2)}" dur="${dur}s" begin="-${delay}s" repeatCount="indefinite"/></circle>`}svg.innerHTML=out;})();
+</script>
+</body>
+</html>

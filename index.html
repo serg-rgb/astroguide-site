@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>AstroGuide</title>
+  <!-- Static-mockup root: bounces to the locale that best matches the visitor's Accept-Language,
+       falling back to English. In the Next.js port, middleware does this server-side. -->
+  <meta http-equiv="refresh" content="0; url=en/index.html"/>
+  <link rel="alternate" hreflang="en" href="en/index.html"/>
+  <link rel="alternate" hreflang="es" href="es/index.html"/>
+  <link rel="alternate" hreflang="ru" href="ru/index.html"/>
+  <link rel="alternate" hreflang="x-default" href="en/index.html"/>
+  <style>
+    body{background:#070711;color:#F0E8D8;font-family:system-ui,sans-serif;text-align:center;padding:48px}
+    a{color:#E8D29E}
+  </style>
+</head>
+<body>
+  <p>Redirecting to <a href="en/index.html">English (en)</a>. Other locales: <a href="es/index.html">Español</a> · <a href="ru/index.html">Русский</a>.</p>
+  <script>
+    // Light client-side Accept-Language match — pick the visitor's locale if we serve it.
+    (function(){
+      var supported = ['en','es','ru'];
+      var pref = (navigator.language || 'en').slice(0,2).toLowerCase();
+      var target = supported.indexOf(pref) >= 0 ? pref : 'en';
+      location.replace(target + '/index.html');
+    })();
+  </script>
+</body>
+</html>
