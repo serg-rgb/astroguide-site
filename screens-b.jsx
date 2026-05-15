@@ -412,35 +412,56 @@ window.CardOfDayScreen = CardOfDayScreen;
 
 function TarotCardFace({ card, reversed, large }) {
   const w = large ? 220 : 80;
+  const pad = large ? 9 : 3;
+  const id = String(card.id).padStart(2, '0');
   return (
     <div style={{
       width: w, aspectRatio: '0.66',
       borderRadius: 14,
-      background:
-        'radial-gradient(circle at 50% 30%, rgba(232,210,158,0.18), transparent 60%), ' +
-        'linear-gradient(180deg, #1a1424 0%, #0d0a18 100%)',
+      background: 'linear-gradient(180deg, #1a1424 0%, #0d0a18 100%)',
       border: '1px solid var(--gold)',
       boxShadow: '0 14px 40px rgba(0,0,0,0.5), 0 0 30px rgba(201,168,106,0.18)',
       position: 'relative', overflow: 'hidden',
-      display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
-      padding: large ? 22 : 8,
-      transform: reversed ? 'rotate(180deg)' : 'none',
+      padding: 0,
     }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-        <span style={{ fontFamily: 'Forum', fontSize: large ? 14 : 8, color: 'var(--gold)', letterSpacing: '0.15em' }}>
-          {String(card.id).padStart(2, '0')}
-        </span>
-        {reversed && (
-          <span style={{ color: 'var(--gold)', fontSize: large ? 16 : 9, transform: 'rotate(180deg)' }}>↻</span>
-        )}
-      </div>
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <TarotIllustration id={card.id} size={large ? 110 : 38}/>
-      </div>
-      <div style={{ fontFamily: 'Forum', fontSize: large ? 13 : 7, color: 'var(--gold-soft)',
-                    letterSpacing: '0.18em', textAlign: 'center', textTransform: 'uppercase' }}>
-        {card.nm}
-      </div>
+      <img src={`assets/tarot-dore/${id}.png`} alt={card.nm} loading="lazy" style={{
+        position: 'absolute',
+        inset: pad,
+        width: `calc(100% - ${pad * 2}px)`,
+        height: `calc(100% - ${pad * 2}px)`,
+        objectFit: 'cover',
+        borderRadius: large ? 10 : 5,
+      }}/>
+      <div style={{
+        position: 'absolute',
+        inset: pad,
+        borderRadius: large ? 10 : 5,
+        boxShadow: 'inset 0 0 0 1px rgba(7,7,17,0.32), inset 0 -42px 38px rgba(7,7,17,0.48)',
+        pointerEvents: 'none',
+      }}/>
+      <div style={{
+        position: 'absolute',
+        left: large ? 14 : 6,
+        top: large ? 12 : 5,
+        fontFamily: 'Forum',
+        fontSize: large ? 13 : 7,
+        letterSpacing: '0.16em',
+        color: '#fff3c4',
+        textShadow: '0 1px 6px rgba(0,0,0,0.75)',
+      }}>{id}</div>
+      {reversed && <div style={{
+        position: 'absolute',
+        right: large ? 12 : 4,
+        bottom: large ? 12 : 4,
+        padding: large ? '4px 7px' : '2px 4px',
+        borderRadius: 999,
+        background: 'rgba(7,7,17,0.68)',
+        border: '1px solid rgba(232,210,158,0.42)',
+        color: '#fff3c4',
+        fontFamily: 'Forum',
+        fontSize: large ? 10 : 6,
+        letterSpacing: '0.12em',
+      }}>ПЕР</div>}
     </div>
   );
 }

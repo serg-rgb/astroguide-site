@@ -388,6 +388,55 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: 0.06em;
   color: var(--text);
 }
+.floating-play {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 90;
+  height: 62px;
+  padding: 0 24px 0 18px;
+  background:
+    linear-gradient(180deg, rgba(232,210,158,0.18), rgba(7,7,17,0.86)),
+    rgba(7,7,17,0.82);
+  border-color: rgba(232,210,158,0.42);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.5), 0 0 26px rgba(201,168,106,0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  opacity: 0.98;
+}
+.floating-play.disabled {
+  opacity: 0.98;
+}
+.floating-play .store-badge__icon {
+  width: 30px;
+  height: 30px;
+}
+.floating-play .store-badge__top {
+  color: var(--gold-soft);
+}
+.floating-play .store-badge__name {
+  font-size: 16px;
+}
+@media (max-width: 640px) {
+  .floating-play {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    height: 52px;
+    max-width: calc(100vw - 24px);
+    padding: 0 16px 0 13px;
+    border-radius: 12px;
+  }
+  .floating-play .store-badge__icon {
+    width: 26px;
+    height: 26px;
+  }
+  .floating-play .store-badge__top {
+    display: none;
+  }
+  .floating-play .store-badge__name {
+    font-size: 14px;
+  }
+}
 
 /* ─── Hero visual slot ─── */
 .hero__visual {
