@@ -421,14 +421,25 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .floating-play {
     right: max(12px, env(safe-area-inset-right));
     bottom: max(12px, env(safe-area-inset-bottom));
-    height: 52px;
-    max-width: calc(100vw - 24px);
-    padding: 0 16px 0 13px;
-    border-radius: 12px;
+    width: 54px;
+    height: 54px;
+    max-width: 54px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+    border-radius: 50%;
   }
   .floating-play .store-badge__icon {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
+  }
+  .floating-play .store-badge__text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
   .floating-play .store-badge__top {
     display: none;
@@ -1316,7 +1327,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .section__title { font-size: clamp(24px, 7.5vw, 32px); }
   .section__lead { font-size: 16px; }
   .feature__phone {
-    width: min(280px, calc(100vw - 56px));
+    width: min(268px, calc(100vw - 56px));
     height: auto;
     aspect-ratio: 300 / 540;
   }
@@ -1326,25 +1337,41 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .feature__screen iframe {
     width: 393px;
     height: 852px;
-    transform: scale(calc((100vw - 80px) / 393));
+    transform: scale(calc(252 / 393));
     transform-origin: top left;
-    max-width: 268px;
+    max-width: none;
   }
   .feature__desc { font-size: 15px; max-width: 32ch; }
   .creed__card { padding: var(--sp-8) var(--sp-6); }
   .creed__body { font-size: 16px; }
   .tour-card__phone {
-    width: min(260px, calc(100vw - 56px));
+    width: min(252px, calc(100vw - 56px));
     height: auto;
     aspect-ratio: 280 / 504;
   }
   .tour-card__phone iframe {
-    transform: scale(calc((100vw - 80px) / 393));
+    transform: scale(calc(240 / 393));
     transform-origin: top left;
+    max-width: none;
   }
   .tour-card__copy { text-align: left !important; }
   .tour-card__copy .tour-card__num { margin-left: 0 !important; }
   .footer-bottom { flex-direction: column; gap: var(--sp-3); }
+}
+
+@media (max-width: 340px) {
+  .feature__phone {
+    width: calc(100vw - 48px);
+  }
+  .feature__screen iframe {
+    transform: scale(calc(240 / 393));
+  }
+  .tour-card__phone {
+    width: calc(100vw - 56px);
+  }
+  .tour-card__phone iframe {
+    transform: scale(calc(228 / 393));
+  }
 }
 
 /* ═══════════ FOOTER LANGUAGE SWITCHER ═══════════ */
