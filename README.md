@@ -25,6 +25,10 @@ landing/
   landing.css             Shared component styles
   planets/                NASA / Solar System Scope planet textures (CC-BY-4.0 / public domain) — see Attribution
   og-image.png            1200×630 open-graph image used by social previews
+  favicon.ico/.svg/.png   Production favicon set
+  apple-touch-icon.png    iOS home-screen icon
+  robots.txt              Production crawl policy
+  sitemap.xml             Canonical sitemap with hreflang alternates
   README.md               This file
 ```
 
@@ -56,6 +60,27 @@ Astrology (3)/
 The header language switcher (top-right of every page) and the footer switcher both link between `/en/<page>.html`, `/es/<page>.html`, and `/ru/<page>.html` — the active locale is shown as a filled gold chip and is non-interactive (`aria-current="page"`). Move between any pair of locales on any page in one click.
 
 The root `landing/index.html` does both a `<meta http-equiv="refresh">` and a tiny JS `Accept-Language` match to send first-time visitors to the best locale.
+
+---
+
+## Production deployment snapshot
+
+Current production domain: <https://astroguides.app/>.
+
+| Target | Repository | Status |
+|--------|------------|--------|
+| Production | `serg-rgb/astroguide-site` | GitHub Pages, custom domain `astroguides.app`, HTTPS enforced |
+| Preview | `serg-rgb/astroguide-site-preview` | GitHub Pages project URL, no custom domain |
+| Source | `serg-rgb/astroguide-android` | `landing/` source plus prototype sources |
+
+The production GitHub Pages certificate is approved for both `astroguides.app` and `www.astroguides.app` via Let's Encrypt, with `www` redirecting to the apex domain. On May 16, 2026 the certificate provisioning had to be restarted by removing and re-adding the Pages custom domain in GitHub; GitHub then created the CNAME reset commits in the production Pages repository and HTTPS enforcement was enabled.
+
+Production SEO metadata is intentionally absolute:
+
+- canonical URLs use `https://astroguides.app/...`
+- Open Graph and Twitter images use `https://astroguides.app/og-image.png`
+- hreflang alternates cover `en`, `es`, `ru`, plus `x-default`
+- `robots.txt` points to `https://astroguides.app/sitemap.xml`
 
 ---
 
@@ -103,12 +128,10 @@ The root `landing/index.html` does both a `<meta http-equiv="refresh">` and a ti
 
 ---
 
-## Remaining TODOs (for production)
+## Remaining TODOs
 
-1. **Export OG image to PNG** at 2400×1260 and switch the meta value before going live.
-2. **Custom domain** for production — currently relative paths assume Vercel-style deploy of the `landing/` folder.
-3. **Legal review** of the localized Privacy/Terms — the translations are accurate to the EN voice but a lawyer should sign off on the RU and ES versions before a launch that takes payments.
-4. **Press section** — slot reserved above the footer, not built yet.
-5. **Optional**: add Apple App Store badge once iOS is on the roadmap (currently only Google Play CTA, with "Coming soon" microcopy).
+1. **Legal review** of the localized Privacy/Terms — the translations are accurate to the EN voice but a lawyer should sign off on the RU and ES versions before a launch that takes payments.
+2. **Press section** — slot reserved above the footer, not built yet.
+3. **Optional**: add Apple App Store badge once iOS is on the roadmap (currently only Google Play CTA, with "Coming soon" microcopy).
 
 That's it.
