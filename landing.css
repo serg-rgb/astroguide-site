@@ -21,6 +21,9 @@ body {
       transparent 70%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
 }
+.has-floating-play {
+  scroll-padding-bottom: calc(120px + env(safe-area-inset-bottom));
+}
 img, svg { display: block; max-width: 100%; }
 a { color: var(--gold-soft); text-decoration: none; transition: color 200ms var(--ease-soft); }
 a:hover { color: var(--gold); }
@@ -416,29 +419,41 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .floating-play .store-badge__name {
   font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 @media (max-width: 640px) {
+  body.has-floating-play {
+    padding-bottom: calc(128px + env(safe-area-inset-bottom));
+  }
   .floating-play {
-    right: max(12px, env(safe-area-inset-right));
-    bottom: max(12px, env(safe-area-inset-bottom));
-    width: 54px;
-    height: 54px;
-    max-width: 54px;
-    padding: 0;
+    right: max(10px, env(safe-area-inset-right));
+    bottom: max(84px, calc(env(safe-area-inset-bottom) + 18px));
+    width: auto;
+    min-width: 154px;
+    height: 50px;
+    max-width: calc(100vw - 24px);
+    padding: 0 16px 0 13px;
     justify-content: center;
-    gap: 0;
-    border-radius: 50%;
+    gap: 8px;
+    border-radius: 999px;
+    box-shadow:
+      0 12px 30px rgba(0,0,0,0.42),
+      0 0 18px rgba(201,168,106,0.12);
   }
   .floating-play .store-badge__icon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
   .floating-play .store-badge__text {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
+    display: flex;
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip-path: none;
+    opacity: 1;
+    visibility: visible;
     white-space: nowrap;
   }
   .floating-play .store-badge__top {
@@ -446,6 +461,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   }
   .floating-play .store-badge__name {
     font-size: 14px;
+    letter-spacing: 0.04em;
   }
 }
 
@@ -1360,6 +1376,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 @media (max-width: 340px) {
+  .floating-play {
+    min-width: 138px;
+    height: 46px;
+    padding: 0 12px 0 10px;
+    gap: 7px;
+  }
+  .floating-play .store-badge__icon {
+    width: 22px;
+    height: 22px;
+  }
+  .floating-play .store-badge__name {
+    font-size: 13px;
+  }
   .feature__phone {
     width: calc(100vw - 48px);
   }
