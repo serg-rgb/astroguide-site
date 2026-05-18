@@ -8,7 +8,7 @@ Static high-fi mockup of the AstroGuide landing, built per `LANDING_DESIGN_BRIEF
 
 ```
 landing/
-  index.html              Root: client-side redirect to the visitor's locale (falls back to /en/).
+  index.html              Root x-default page with language links; no client-side redirect.
   en/                     English (primary)
     index.html            Main page — hero · features (6) · product tour (8) · creed · disclaimer · how-it-works · FAQ · footer
     privacy.html
@@ -59,7 +59,7 @@ Astrology (3)/
 
 The header language switcher (top-right of every page) and the footer switcher both link between `/en/<page>.html`, `/es/<page>.html`, and `/ru/<page>.html` — the active locale is shown as a filled gold chip and is non-interactive (`aria-current="page"`). Move between any pair of locales on any page in one click.
 
-The root `landing/index.html` does both a `<meta http-equiv="refresh">` and a tiny JS `Accept-Language` match to send first-time visitors to the best locale.
+The root `landing/index.html` is a lightweight x-default page that links to `/en/`, `/es/`, and `/ru/`. It intentionally does not redirect, so Google can keep a stable canonical root URL.
 
 ---
 
@@ -81,6 +81,9 @@ Production SEO metadata is intentionally absolute:
 - Open Graph and Twitter images use `https://astroguides.app/og-image.png`
 - hreflang alternates cover `en`, `es`, `ru`, plus `x-default`
 - `robots.txt` points to `https://astroguides.app/sitemap.xml`
+- `sitemap.xml` includes only the four indexable landing URLs: `/`, `/en/`, `/es/`, `/ru/`
+- legal/support/disclosure pages stay public for store compliance, but use `noindex, follow`
+- interactive prototype shells are `noindex, nofollow` to prevent query-param demo screens from entering the index
 
 ---
 
@@ -124,7 +127,7 @@ Production SEO metadata is intentionally absolute:
 - `<details>`-based FAQ works without JS.
 - Forms POST to `/api/account-deletion` and `/api/support` — wire as Next.js Route Handlers, validate input, run Turnstile server-side check, forward to Resend.
 - The `og-image.png` is referenced from `<meta property="og:image">` because Twitter/X, Facebook, and LinkedIn do not reliably parse SVG previews.
-- The locale redirect at `landing/index.html` does it client-side. The Next.js port should do it in `middleware.ts` server-side with `Accept-Language` parsing, so the redirect happens at the edge.
+- Do not reintroduce a client-side locale redirect at `/`. If the Next.js port adds language detection, use a server-side redirect only after deciding whether `/` should remain the public x-default canonical.
 
 ---
 
