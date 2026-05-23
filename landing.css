@@ -75,7 +75,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background-size: 200% 100%;
   background-position: 0 50%;
   background-repeat: repeat-x;
-  /* No animation by default — only Jupiter is large enough to read motion at this scale. */
 }
 .planet__shadow {
   position: absolute;
@@ -94,17 +93,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   z-index: 2;
 }
 
-@keyframes planet-spin {
-  from { background-position: 0% 50%; }
-  to   { background-position: -200% 50%; }
-}
-
-/* Per-planet opacity (depth illusion). Only Jupiter spins — the others are too small to read motion. */
+/* Per-planet opacity (depth illusion). All planets rendered static — animation removed to reduce GPU/CPU cost. */
 .planet--saturn  { opacity: 0.78; }
 .planet--jupiter { opacity: 0.82; }
-.planet--jupiter .planet__sphere {
-  animation: planet-spin 90s linear infinite;
-}
 .planet--uranus  { opacity: 0.68; }
 .planet--moon    { opacity: 0.62; }
 
@@ -146,9 +137,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .planet__sphere { animation: none; }
-}
 @media (max-width: 720px) {
   /* Planets are decoration — shrink them on phones so they don't overpower the copy. */
   .planet { transform: translate(-50%, -50%) scale(0.6); }
@@ -280,7 +268,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 @media (min-width: 920px) {
   .hero__inner {
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
     gap: var(--sp-16);
   }
 }
@@ -469,7 +457,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero__visual {
   position: relative;
   aspect-ratio: 1 / 1;
-  max-width: 540px;
+  max-width: 680px;
   margin: 0 auto;
 }
 .hero__visual svg,
@@ -479,19 +467,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   pointer-events: none;
 }
 
-/* Inline hero natal wheel — slow rotation. Tilt + flatten live as SVG attribute
- * transforms (always reliable); only the inner spin animates via CSS. */
+/* Inline hero natal wheel — rendered static. Tilt + flatten live as SVG attribute transforms. */
 .hero-wheel { width: 100%; height: 100%; display: block; }
 .hero-wheel__spin {
   transform-origin: 0 0;
-  animation: hero-wheel-spin 180s linear infinite;
-}
-@keyframes hero-wheel-spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-wheel__spin { animation: none; }
 }
 
 /* ═══════════ SECTIONS ═══════════ */
