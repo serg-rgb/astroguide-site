@@ -457,6 +457,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ─── Hero visual slot ─── */
 .hero__visual {
   position: relative;
+  width: 100%;
   aspect-ratio: 1 / 1;
   max-width: 840px;
   margin: 0 auto;
