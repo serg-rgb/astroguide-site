@@ -27,12 +27,18 @@ landing/
   og-image.png            1200×630 open-graph image used by social previews
   favicon.ico/.svg/.png   Production favicon set
   apple-touch-icon.png    iOS home-screen icon
+  AstroGuide*.html        Interactive prototype shells used by landing iframes; noindex
+  app.jsx                 Shared prototype routing logic
+  components*.jsx         Locale-specific prototype UI strings + widgets
+  screens-*.jsx           Locale-specific prototype screens
+  styles.css              Shared prototype styles
+  tweaks-panel.jsx        Prototype tweak panel
   robots.txt              Production crawl policy
   sitemap.xml             Canonical sitemap with hreflang alternates
   README.md               This file
 ```
 
-Sibling to `landing/` (in `Astrology (3)/`): the interactive prototype that lives inside each landing iframe.
+Original prototype source also exists in `Astrology (3)/`. The production `landing/` folder includes a copy so iframe previews continue to work when the static site is deployed by itself.
 
 ```
 Astrology (3)/
@@ -81,8 +87,8 @@ Production SEO metadata is intentionally absolute:
 - Open Graph and Twitter images use `https://astroguides.app/og-image.png`
 - hreflang alternates cover `en`, `es`, `ru`, plus `x-default`
 - `robots.txt` points to `https://astroguides.app/sitemap.xml`
-- `sitemap.xml` includes only the four indexable landing URLs: `/`, `/en/`, `/es/`, `/ru/`
-- legal/support/disclosure pages stay public for store compliance, but use `noindex, follow`
+- `sitemap.xml` includes every indexable public page: `/`, `/en/`, `/es/`, `/ru/`, plus privacy, terms, account deletion, support, AI disclosure, and disclaimer in all three locales
+- legal/support/disclosure pages stay public for store compliance and are indexable
 - interactive prototype shells are `noindex, nofollow` to prevent query-param demo screens from entering the index
 
 ---
