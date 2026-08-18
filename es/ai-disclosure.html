@@ -35,7 +35,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Forum&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../tokens.css"/><link rel="stylesheet" href="../landing.css"/>
 </head>
-<body>
+<body data-starfield-seed="43" data-starfield-count="100">
 <svg class="starfield-bg" viewBox="0 0 1440 2400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
 <defs><radialGradient id="starGrad"><stop offset="0%" stop-color="#E8D29E"/><stop offset="100%" stop-color="#E8D29E" stop-opacity="0"/></radialGradient></defs>
 <g id="starfield-stars"></g></svg>
@@ -44,6 +44,7 @@
 <symbol id="sigil" viewBox="0 0 40 40"><g fill="none" stroke="currentColor"><circle cx="20" cy="20" r="18" stroke-width="0.5" opacity="0.4"/><circle cx="20" cy="20" r="13" stroke-width="0.4" opacity="0.3"/><path d="M 20 4 L 22 18 L 36 20 L 22 22 L 20 36 L 18 22 L 4 20 L 18 18 Z" fill="currentColor" fill-opacity="0.9" stroke-width="0.5"/></g></symbol>
 </svg>
 
+<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
 <header class="site-header"><div class="wrap site-header__inner">
 <a class="logo" href="/es/"><svg class="logo__sigil" style="color: var(--gold)"><use href="#sigil"/></svg><span class="logo__mark">AstroGuide</span></a>
 <div class="site-header__right">
@@ -56,11 +57,11 @@
 </div>
 </div></header>
 
-<main class="legal"><div class="wrap">
+<main id="main-content" class="legal"><div class="wrap">
 <header class="legal__head">
 <div class="legal__eyebrow">NOTA HONESTA</div>
 <h1 class="legal__title">Cómo usamos la IA</h1>
-<p class="legal__updated">Vigente desde el 14 de mayo de 2026</p>
+<p class="legal__updated">Vigente desde el 18 de agosto de 2026</p>
 </header>
 
 <div class="legal__body">
@@ -93,15 +94,16 @@
 <li><strong>No inventa aspectos, tránsitos ni posiciones planetarias.</strong> Si el prompt no lo contenía, la prosa no puede afirmarlo.</li>
 <li><strong>No predice eventos futuros concretos.</strong> Nada de «conocerás a alguien alto el jueves».</li>
 <li><strong>No da consejos médicos, de salud mental, financieros ni legales.</strong> El system prompt lo prohíbe explícitamente.</li>
-<li><strong>No ve tu nombre, correo electrónico, fecha de nacimiento ni ubicación.</strong> Solo se envían datos astrológicos estructurados anonimizados.</li>
-<li><strong>No entrenamos los modelos con tus datos.</strong> El proveedor que usamos tiene el entrenamiento desactivado en nuestra cuenta.</li>
+<li><strong>No recibe el correo de tu cuenta, ID de Google, token de compra, token de notificaciones ni entradas del diario.</strong></li>
+<li><strong>No es un asesor profesional.</strong> El texto generado puede equivocarse y no sustituye consejo médico, de salud mental, financiero ni legal.</li>
 </ul>
 
 <h2 id="models">Modelos que usamos</h2>
 <p>Enrutamos a través de <a href="https://openrouter.ai" target="_blank" rel="noopener">OpenRouter</a> a modelos específicos, elegidos por tarea:</p>
 <ul>
-<li><strong>Claude Haiku 4.5</strong> — pronósticos diarios y semanales cortos. Rápido, económico, afilado en el tono.</li>
-<li><strong>Claude Sonnet 4.6</strong> — interpretación completa de carta natal y tiradas de tarot de tres cartas. Más espacio para razonar, síntesis más profunda.</li>
+<li><strong>Claude Haiku 4.5</strong> — modelo principal configurado para la mayoría de lecturas.</li>
+<li><strong>Gemini 2.0 Flash</strong> — modelo alternativo configurado si el principal no está disponible.</li>
+<li><strong>Claude Sonnet 4.6</strong> — se usa en algunas lecturas largas, como tiradas de tarot.</li>
 </ul>
 <p>Elegimos versiones específicas y fijas. Si cambiamos de modelo, lo anotaremos aquí.</p>
 
@@ -113,15 +115,16 @@
 <li>Los tránsitos actuales para el período consultado.</li>
 <li>El idioma de la salida solicitada (en / ru / es).</li>
 <li>El tipo de lectura (diaria, semanal, mensual, natal, sinastría, tarot).</li>
+<li>Según la función: nombre mostrado, edad derivada de la fecha de nacimiento, fecha/hora/lugar de nacimiento, lugar actual, género, perfil de pareja o la pregunta que escribiste.</li>
 </ul>
-<p>El prompt <strong>no</strong> contiene: tu nombre, el correo de tu cuenta, el texto completo de tu ciudad de nacimiento, tu dirección IP ni ningún otro identificador. Dos usuarios con cartas idénticas recibirían prosa generada desde el mismo prompt.</p>
+<p>El prompt <strong>no</strong> contiene el correo de tu cuenta, ID de Google, token de compra, token de notificaciones, entradas del diario ni historial analítico. Consulta la <a href="privacy.html">Política de privacidad</a> para proveedores y plazos.</p>
 
 <h2 id="wrong">Cuando se equivoca</h2>
-<p>Los modelos de lenguaje a veces escriben sinsentidos, se contradicen o usan un giro que cae mal. Cuando lo notes, por favor, dínoslo — hay un botón de bandera junto a cada texto generado en la app, y va directo a la bandeja de un humano real. Usamos esas banderas para refinar nuestros prompts.</p>
+<p>Los modelos de lenguaje a veces escriben sinsentidos, se contradicen o producen texto dañino. Usa la acción «Reportar» junto al contenido generado: elige un motivo y, opcionalmente, añade contexto. El reporte se envía a AstroGuide sin salir de la app.</p>
 <p>No afirmamos que la prosa sea perfecta. Afirmamos que es honesta sobre lo que es.</p>
 
 <hr/>
-<p><em>Si prefieres no usar texto generado por IA, puedes desactivarlo en Ajustes → Funciones de IA. La app cae entonces sobre una biblioteca curada de interpretaciones escritas por humanos — más limitada en alcance, pero completamente libre de modelos de lenguaje.</em></p>
+<p><em>AstroGuide todavía no ofrece un reemplazo sin IA para las lecturas generadas. Puedes evitar esas funciones y seguir usando el diario local, calendario, ajustes y otras partes no generativas.</em></p>
 </article>
 </div>
 </div></main>
@@ -131,9 +134,6 @@
 <span class="lang-switch"><a class="lang-switch__item" href="../en/ai-disclosure.html" hreflang="en">EN</a><a class="lang-switch__item lang-switch__item--active" aria-current="page">ES</a><a class="lang-switch__item" href="../ru/ai-disclosure.html" hreflang="ru">RU</a></span>
 </div></footer>
 
-<script>
-(function(){const svg=document.getElementById('starfield-stars');if(!svg)return;let s=43,rng=()=>(s=(s*9301+49297)%233280)/233280;let out='';for(let i=0;i<100;i++){const x=(rng()*1440)|0,y=(rng()*2400)|0,r=rng()<0.08?(1.4+rng()).toFixed(1):(0.4+rng()*0.8).toFixed(2);const op=(0.25+rng()*0.55).toFixed(2),dur=(3+rng()*5).toFixed(1),delay=(rng()*6).toFixed(1);out+=`<circle cx="${x}" cy="${y}" r="${r}" fill="url(#starGrad)" opacity="${op}"><animate attributeName="opacity" values="${(op*0.4).toFixed(2)};${op};${(op*0.4).toFixed(2)}" dur="${dur}s" begin="-${delay}s" repeatCount="indefinite"/></circle>`}svg.innerHTML=out;})();
-(function(){const links=[...document.querySelectorAll('.legal__toc a')];const sections=links.map(a=>document.querySelector(a.getAttribute('href')));const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=links.find(l=>l.getAttribute('href')==='#'+e.target.id);if(a)a.classList.add('active')}})},{rootMargin:'-30% 0px -60% 0px'});sections.forEach(s=>s&&io.observe(s));})();
-</script>
+<script defer src="../landing.js"></script>
 </body>
 </html>

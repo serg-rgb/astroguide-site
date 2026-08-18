@@ -95,7 +95,8 @@ const MONTHS = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov
 const MOON_SIGNS = ['Virgo','Libra','Escorpio','Sagitario','Capricornio','Acuario','Piscis','Aries','Tauro','Géminis','Cáncer','Leo'];
 
 function generateDays() {
-  const start = new Date(2026, 4, 12);
+  const start = new Date();
+  start.setHours(12, 0, 0, 0);
   let seed = 42;
   const rnd = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
   const moods = ['up','tension','calm','up','down','calm','up','tension','up','calm','tension','calm'];

@@ -99,8 +99,9 @@ const MONTHS = ['янв','фев','мар','апр','мая','июн','июл','
 const MOON_SIGNS = ['Деве','Весах','Скорпионе','Стрельце','Козероге','Водолее','Рыбах','Овне','Тельце','Близнецах','Раке','Льве'];
 
 function generateDays() {
-  // start Tue 12 May 2026, 30 days
-  const start = new Date(2026, 4, 12);
+  // Rolling 30-day sample calendar beginning today.
+  const start = new Date();
+  start.setHours(12, 0, 0, 0);
   let seed = 42;
   const rnd = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
   const moods = ['up','tension','calm','up','down','calm','up','tension','up','calm','tension','calm'];

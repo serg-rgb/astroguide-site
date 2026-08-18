@@ -1,11 +1,16 @@
 /* global React, ReactDOM */
 const { useState, useEffect } = React;
 
+const LOCALE_CONFIG = window.ASTROGUIDE_LOCALE_CONFIG || {
+  userName: 'Sam',
+  journalEntries: [],
+};
+
 const DEFAULTS = /*EDITMODE-BEGIN*/{
   "startScreen": "horoscope",
   "hasNatal": true,
   "selectedSign": "leo",
-  "userName": "Сергей",
+  "userName": LOCALE_CONFIG.userName,
   "starCount": 26,
   "dropCap": true
 }/*EDITMODE-END*/;
@@ -46,14 +51,13 @@ function App() {
   const [showNatalPromo, setShowNatalPromo] = useState(__initPromo);
   const [showSignPicker, setShowSignPicker] = useState(!!__initPicker);
   const [pickerMode, setPickerMode] = useState(__initPicker === 'other' ? 'other' : 'own'); // own | other
-  const [journalEntries, setJournalEntries] = useState([
-    { date: new Date(2026, 4, 11), prompt: 'Что ты хочешь впустить в свою жизнь?',
-      text: 'Тишину по утрам. Чтобы час перед всеми разговорами принадлежал только мне.' },
-    { date: new Date(2026, 4, 8), prompt: 'От чего пора освободиться?',
-      text: 'От ожидания одобрения. От привычки переспрашивать у других — правильно ли я чувствую.' },
-    { date: new Date(2026, 4, 3), prompt: 'Где сегодня живёт твоя сила?',
-      text: 'В способности молчать, когда хочется оправдаться.' },
-  ]);
+  const [journalEntries, setJournalEntries] = useState(() =>
+    LOCALE_CONFIG.journalEntries.map(({ daysAgo, prompt, text }) => {
+      const date = new Date();
+      date.setDate(date.getDate() - daysAgo);
+      return { date, prompt, text };
+    })
+  );
   const [otherSign, setOtherSign] = useState(null);
 
   // URL hasNatal override wins for the first render (used by landing-tour iframes).

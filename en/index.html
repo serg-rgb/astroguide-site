@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>AstroGuide — AI Astrology App for Birth Charts, Horoscopes & Tarot</title>
-  <meta name="description" content="AstroGuide is an AI astrology app for natal birth charts, daily horoscopes, tarot cards, compatibility, moon rituals, and a 30-day transit calendar. Android on Google Play, May 2026."/>
+  <meta name="description" content="AstroGuide is an AI astrology app for natal birth charts, daily horoscopes, tarot cards, compatibility, moon rituals, and a 30-day transit calendar. Android release planned for Google Play."/>
   <link rel="canonical" href="https://astroguides.app/en/"/>
   <link rel="alternate" hreflang="en" href="https://astroguides.app/en/"/>
   <link rel="alternate" hreflang="es" href="https://astroguides.app/es/"/>
@@ -39,34 +39,6 @@
 
   <link rel="stylesheet" href="../tokens.css"/>
   <link rel="stylesheet" href="../landing.css?v=20260523-wheel-width"/>
-  <style>
-    @media (max-width: 640px) {
-      .floating-play {
-        right: max(10px, env(safe-area-inset-right));
-        bottom: max(84px, calc(env(safe-area-inset-bottom) + 18px));
-        width: auto;
-        min-width: 154px;
-        height: 50px;
-        max-width: calc(100vw - 24px);
-        padding: 0 16px 0 13px;
-        gap: 8px;
-        border-radius: 999px;
-      }
-      .floating-play .store-badge__text {
-        display: flex;
-        position: static;
-        width: auto;
-        height: auto;
-        overflow: visible;
-        clip-path: none;
-        opacity: 1;
-        visibility: visible;
-        white-space: nowrap;
-      }
-      .floating-play .store-badge__top { display: none; }
-      .floating-play .store-badge__name { font-size: 14px; font-weight: 600; white-space: nowrap; }
-    }
-  </style>
   <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -86,7 +58,9 @@
     }
   </script>
 </head>
-<body class="has-floating-play">
+<body data-starfield-seed="7" data-starfield-count="140">
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <!-- ============ BACKGROUND ============ -->
 <svg class="cosmos-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -227,23 +201,23 @@
 <div class="cosmos-planets" aria-hidden="true">
   <!-- Saturn: equirectangular surface + alpha rings overlay (top right) -->
   <div class="planet planet--saturn" style="--top: 22%; --left: 83%; --size: 130px;">
-    <div class="planet__sphere" style="background-image: url('../planets/2k_saturn.jpg');"></div>
+    <div class="planet__sphere" style="background-image: url('../planets/optimized/saturn-512.webp');"></div>
     <div class="planet__shadow"></div>
-    <img class="planet__ring" src="../planets/2k_saturn_ring_alpha.png" alt=""/>
+    <img class="planet__ring" src="../planets/optimized/saturn-ring-512.webp" alt=""/>
   </div>
   <!-- Jupiter: equirectangular cylindrical map (lower left, large). Bands roll past the equator. -->
   <div class="planet planet--jupiter" style="--top: 81%; --left: 13%; --size: 200px;">
-    <div class="planet__sphere" style="background-image: url('../planets/2k_jupiter.jpg');"></div>
+    <div class="planet__sphere" style="background-image: url('../planets/optimized/jupiter-512.webp');"></div>
     <div class="planet__shadow"></div>
   </div>
   <!-- Uranus: equirectangular pale-blue surface (mid right) -->
   <div class="planet planet--uranus" style="--top: 65%; --left: 69%; --size: 60px;">
-    <div class="planet__sphere" style="background-image: url('../planets/2k_uranus.jpg');"></div>
+    <div class="planet__sphere" style="background-image: url('../planets/optimized/uranus-512.webp');"></div>
     <div class="planet__shadow"></div>
   </div>
   <!-- Moon: equirectangular Clementine map. Sits above the hero copy, mid-upper. -->
   <div class="planet planet--moon" style="--top: 11%; --left: 52%; --size: 52px;">
-    <div class="planet__sphere" style="background-image: url('../planets/2k_moon.jpg');"></div>
+    <div class="planet__sphere" style="background-image: url('../planets/optimized/moon-512.webp');"></div>
     <div class="planet__shadow"></div>
   </div>
 </div>
@@ -304,11 +278,12 @@
 </header>
 
 <!-- ============ HERO ============ -->
+<main id="main-content">
 <section class="hero">
   <div class="wrap hero__inner">
     <div class="hero__copy">
       <div class="hero__eyebrow">
-        <span class="dot"></span>AI ASTROLOGY APP · GOOGLE PLAY MAY 2026
+        <span class="dot"></span>AI ASTROLOGY APP · GOOGLE PLAY RELEASE IN PREPARATION
       </div>
       <h1 class="hero__h1">Astrology,<br/>engineered into magic.</h1>
       <p class="hero__epigraph">
@@ -318,13 +293,13 @@
         AstroGuide takes your date, time, and place of birth, calculates the real sky with Swiss Ephemeris, then turns it into personal AI astrology that feels uncanny in the best way. Not generic zodiac content. A private operating system for meaning.
       </p>
       <div class="hero__ctas">
-        <a class="store-badge disabled" href="#" aria-label="Google Play — coming soon" tabindex="-1">
+        <div class="store-badge release-status" role="status" aria-label="Google Play release in preparation">
           <svg class="store-badge__icon" aria-hidden="true"><use href="#g-play"/></svg>
           <span class="store-badge__text">
-            <span class="store-badge__top">Coming soon · May 2026</span>
+            <span class="store-badge__top">Release in preparation</span>
             <span class="store-badge__name">Google Play</span>
           </span>
-        </a>
+        </div>
       </div>
       <div class="hero__caption">Free birth chart · Daily horoscope · Tarot · Android first</div>
     </div>
@@ -472,7 +447,7 @@
       <article class="feature">
         <div class="feature__phone">
           <div class="feature__screen">
-            <iframe src="../AstroGuide-en.html?screen=natal&amp;name=Sam&amp;embed=1" loading="lazy" title="Natal chart screen — interactive"></iframe>
+            <iframe data-demo-src="../AstroGuide-en.html?screen=natal&amp;name=Sam&amp;embed=1" data-poster="../assets/demo-posters/en/natal.webp" title="Natal chart screen — interactive"></iframe>
           </div>
           <a class="feature__open" href="../AstroGuide-en.html?screen=natal&amp;name=Sam" target="_blank" rel="noopener">
             <span>Open full screen</span>
@@ -489,7 +464,7 @@
       <article class="feature">
         <div class="feature__phone">
           <div class="feature__screen">
-            <iframe src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=forecast&amp;period=day&amp;embed=1" loading="lazy" title="Daily forecast screen — interactive"></iframe>
+            <iframe data-demo-src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=forecast&amp;period=day&amp;embed=1" data-poster="../assets/demo-posters/en/daily.webp" title="Daily forecast screen — interactive"></iframe>
           </div>
           <a class="feature__open" href="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=forecast&amp;period=day" target="_blank" rel="noopener">
             <span>Open full screen</span>
@@ -506,7 +481,7 @@
       <article class="feature">
         <div class="feature__phone">
           <div class="feature__screen">
-            <iframe src="../AstroGuide-en.html?name=Sam&amp;screen=days&amp;embed=1" loading="lazy" title="Thirty-day transit calendar — interactive"></iframe>
+            <iframe data-demo-src="../AstroGuide-en.html?name=Sam&amp;screen=days&amp;embed=1" data-poster="../assets/demo-posters/en/days.webp" title="Thirty-day transit calendar — interactive"></iframe>
           </div>
           <a class="feature__open" href="../AstroGuide-en.html?name=Sam&amp;screen=days" target="_blank" rel="noopener">
             <span>Open full screen</span>
@@ -523,7 +498,7 @@
       <article class="feature">
         <div class="feature__phone">
           <div class="feature__screen">
-            <iframe src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=journal&amp;embed=1" loading="lazy" title="Moon ritual journal — interactive"></iframe>
+            <iframe data-demo-src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=journal&amp;embed=1" data-poster="../assets/demo-posters/en/journal.webp" title="Moon ritual journal — interactive"></iframe>
           </div>
           <a class="feature__open" href="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=journal" target="_blank" rel="noopener">
             <span>Open full screen</span>
@@ -540,7 +515,7 @@
       <article class="feature">
         <div class="feature__phone">
           <div class="feature__screen">
-            <iframe src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=synastry&amp;embed=1" loading="lazy" title="Synastry compatibility — interactive"></iframe>
+            <iframe data-demo-src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=synastry&amp;embed=1" data-poster="../assets/demo-posters/en/synastry.webp" title="Synastry compatibility — interactive"></iframe>
           </div>
           <a class="feature__open" href="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=synastry" target="_blank" rel="noopener">
             <span>Open full screen</span>
@@ -557,7 +532,7 @@
       <article class="feature">
         <div class="feature__phone">
           <div class="feature__screen">
-            <iframe src="../AstroGuide-en.html?name=Sam&amp;screen=oracle&amp;sub=cardOfDay&amp;embed=1" loading="lazy" title="Tarot oracle — interactive"></iframe>
+            <iframe data-demo-src="../AstroGuide-en.html?name=Sam&amp;screen=oracle&amp;sub=cardOfDay&amp;embed=1" data-poster="../assets/demo-posters/en/card-of-day.webp" title="Tarot oracle — interactive"></iframe>
           </div>
           <a class="feature__open" href="../AstroGuide-en.html?name=Sam&amp;screen=oracle&amp;sub=cardOfDay" target="_blank" rel="noopener">
             <span>Open full screen</span>
@@ -589,7 +564,7 @@
 
       <article class="tour-card">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide-en.html?name=Sam&amp;welcome=1&amp;embed=1" loading="lazy" title="Welcome ritual screen"></iframe>
+          <iframe data-demo-src="../AstroGuide-en.html?name=Sam&amp;welcome=1&amp;embed=1" data-poster="../assets/demo-posters/en/welcome.webp" title="Welcome ritual screen"></iframe>
           <a class="tour-card__open" href="../AstroGuide-en.html?name=Sam&amp;welcome=1" target="_blank" rel="noopener" aria-label="Open welcome ritual full screen">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -605,7 +580,7 @@
 
       <article class="tour-card tour-card--rev">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide-en.html?screen=natal&amp;sub=natalCreate&amp;name=Sam&amp;embed=1" loading="lazy" title="Natal chart creation"></iframe>
+          <iframe data-demo-src="../AstroGuide-en.html?screen=natal&amp;sub=natalCreate&amp;name=Sam&amp;embed=1" data-poster="../assets/demo-posters/en/natal-create.webp" title="Natal chart creation"></iframe>
           <a class="tour-card__open" href="../AstroGuide-en.html?screen=natal&amp;sub=natalCreate&amp;name=Sam" target="_blank" rel="noopener" aria-label="Open chart creation full screen">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -621,7 +596,7 @@
 
       <article class="tour-card">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;hasNatal=0&amp;picker=own&amp;embed=1" loading="lazy" title="Sign picker"></iframe>
+          <iframe data-demo-src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;hasNatal=0&amp;picker=own&amp;embed=1" data-poster="../assets/demo-posters/en/sign-picker.webp" title="Sign picker"></iframe>
           <a class="tour-card__open" href="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;hasNatal=0&amp;picker=own" target="_blank" rel="noopener" aria-label="Open sign picker full screen">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -637,7 +612,7 @@
 
       <article class="tour-card tour-card--rev">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=forecast&amp;period=week&amp;embed=1" loading="lazy" title="Weekly forecast"></iframe>
+          <iframe data-demo-src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=forecast&amp;period=week&amp;embed=1" data-poster="../assets/demo-posters/en/weekly.webp" title="Weekly forecast"></iframe>
           <a class="tour-card__open" href="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=forecast&amp;period=week" target="_blank" rel="noopener" aria-label="Open weekly forecast full screen">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -653,7 +628,7 @@
 
       <article class="tour-card">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=forecast&amp;period=month&amp;embed=1" loading="lazy" title="Monthly forecast"></iframe>
+          <iframe data-demo-src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=forecast&amp;period=month&amp;embed=1" data-poster="../assets/demo-posters/en/monthly.webp" title="Monthly forecast"></iframe>
           <a class="tour-card__open" href="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=forecast&amp;period=month" target="_blank" rel="noopener" aria-label="Open monthly forecast full screen">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -669,7 +644,7 @@
 
       <article class="tour-card tour-card--rev">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=journalHistory&amp;embed=1" loading="lazy" title="Journal history"></iframe>
+          <iframe data-demo-src="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=journalHistory&amp;embed=1" data-poster="../assets/demo-posters/en/journal-history.webp" title="Journal history"></iframe>
           <a class="tour-card__open" href="../AstroGuide-en.html?name=Sam&amp;screen=horoscope&amp;sub=journalHistory" target="_blank" rel="noopener" aria-label="Open journal history full screen">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -685,7 +660,7 @@
 
       <article class="tour-card">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide-en.html?name=Sam&amp;screen=oracle&amp;sub=spread&amp;embed=1" loading="lazy" title="Three-card spread"></iframe>
+          <iframe data-demo-src="../AstroGuide-en.html?name=Sam&amp;screen=oracle&amp;sub=spread&amp;embed=1" data-poster="../assets/demo-posters/en/spread.webp" title="Three-card spread"></iframe>
           <a class="tour-card__open" href="../AstroGuide-en.html?name=Sam&amp;screen=oracle&amp;sub=spread" target="_blank" rel="noopener" aria-label="Open three-card spread full screen">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -701,7 +676,7 @@
 
       <article class="tour-card tour-card--rev">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide-en.html?screen=profile&amp;name=Sam&amp;embed=1" loading="lazy" title="Profile and settings"></iframe>
+          <iframe data-demo-src="../AstroGuide-en.html?screen=profile&amp;name=Sam&amp;embed=1" data-poster="../assets/demo-posters/en/profile.webp" title="Profile and settings"></iframe>
           <a class="tour-card__open" href="../AstroGuide-en.html?screen=profile&amp;name=Sam" target="_blank" rel="noopener" aria-label="Open settings full screen">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -840,7 +815,7 @@
       <details>
         <summary>Is AstroGuide free?</summary>
         <div>
-          Yes. The Android app launches on Google Play in May 2026 with a real free tier: daily horoscope, full natal birth chart, basic moon ritual, and sun-sign compatibility. Premium adds month-ahead transits, detailed synastry, and the full tarot oracle. <em>One subscription, one price, no per-feature unlock games.</em>
+          Yes. The Android app is planned for Google Play with a real free tier: daily horoscope, full natal birth chart, basic moon ritual, and sun-sign compatibility. Premium adds month-ahead transits, detailed synastry, and the full tarot oracle. <em>One subscription, one price, no per-feature unlock games.</em>
         </div>
       </details>
       <details>
@@ -882,6 +857,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
@@ -908,7 +884,7 @@
       <div>
         <div class="footer-col__title">Get in touch</div>
         <ul class="footer-col__list">
-          <li><a href="mailto:support@astroguides.app">support@astroguides.app</a></li>
+          <li><a href="support.html">Contact support</a></li>
         </ul>
       </div>
     </div>
@@ -923,51 +899,7 @@
   </div>
 </footer>
 
-<a class="store-badge floating-play disabled" href="#" aria-label="Google Play — coming soon" tabindex="-1">
-  <svg class="store-badge__icon" aria-hidden="true"><use href="#g-play"/></svg>
-  <span class="store-badge__text">
-    <span class="store-badge__top">Coming soon · May 2026</span>
-    <span class="store-badge__name">GooglePlay</span>
-  </span>
-</a>
-
-<script>
-  // generate starfield
-  (function() {
-    const svg = document.getElementById('starfield-stars');
-    if (!svg) return;
-    let s = 7, rng = () => (s = (s * 9301 + 49297) % 233280) / 233280;
-    let out = '';
-    for (let i = 0; i < 140; i++) {
-      const x = (rng() * 1440) | 0;
-      const y = (rng() * 2400) | 0;
-      const r = rng() < 0.08 ? (1.4 + rng()).toFixed(1) : (0.4 + rng() * 0.8).toFixed(2);
-      const op = (0.25 + rng() * 0.55).toFixed(2);
-      const dur = (3 + rng() * 5).toFixed(1);
-      const delay = (rng() * 6).toFixed(1);
-      out += `<circle cx="${x}" cy="${y}" r="${r}" fill="url(#starGrad)" opacity="${op}">`
-           + `<animate attributeName="opacity" values="${(op*0.4).toFixed(2)};${op};${(op*0.4).toFixed(2)}" dur="${dur}s" begin="-${delay}s" repeatCount="indefinite"/>`
-           + `</circle>`;
-    }
-    svg.innerHTML = out;
-  })();
-  // scroll reveal
-  (function() {
-    if (!('IntersectionObserver' in window)) return;
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
-    document.querySelectorAll('.feature, .creed__card, .step, .disclaimer-block, .hero__copy, .hero__visual').forEach(el => {
-      el.classList.add('reveal');
-      io.observe(el);
-    });
-  })();
-</script>
+<script defer src="../landing.js"></script>
 
 </body>
 </html>

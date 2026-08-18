@@ -1,0 +1,12 @@
+{
+  "name": "astroguide-site",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:prototypes",
+    "build:prototypes": "node scripts/build-prototypes.mjs",
+    "check": "node --check landing.js && node --check forms-fallback.js"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.8"
+  }
+}

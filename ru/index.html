@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>AstroGuide — AI-астрология: натальная карта, гороскоп и Таро</title>
-  <meta name="description" content="AstroGuide — приложение AI-астрологии: натальная карта, ежедневный гороскоп, Таро, совместимость, лунный ритуал и календарь транзитов. Android в Google Play, май 2026."/>
+  <meta name="description" content="AstroGuide — приложение AI-астрологии: натальная карта, ежедневный гороскоп, Таро, совместимость, лунный ритуал и календарь транзитов. Релиз Android в Google Play готовится."/>
   <link rel="canonical" href="https://astroguides.app/ru/"/>
   <link rel="alternate" hreflang="en" href="https://astroguides.app/en/"/>
   <link rel="alternate" hreflang="es" href="https://astroguides.app/es/"/>
@@ -39,34 +39,6 @@
 
   <link rel="stylesheet" href="../tokens.css"/>
   <link rel="stylesheet" href="../landing.css?v=20260523-wheel-width"/>
-  <style>
-    @media (max-width: 640px) {
-      .floating-play {
-        right: max(10px, env(safe-area-inset-right));
-        bottom: max(84px, calc(env(safe-area-inset-bottom) + 18px));
-        width: auto;
-        min-width: 154px;
-        height: 50px;
-        max-width: calc(100vw - 24px);
-        padding: 0 16px 0 13px;
-        gap: 8px;
-        border-radius: 999px;
-      }
-      .floating-play .store-badge__text {
-        display: flex;
-        position: static;
-        width: auto;
-        height: auto;
-        overflow: visible;
-        clip-path: none;
-        opacity: 1;
-        visibility: visible;
-        white-space: nowrap;
-      }
-      .floating-play .store-badge__top { display: none; }
-      .floating-play .store-badge__name { font-size: 14px; font-weight: 600; white-space: nowrap; }
-    }
-  </style>
   <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -86,7 +58,9 @@
     }
   </script>
 </head>
-<body class="has-floating-play">
+<body data-starfield-seed="7" data-starfield-count="140">
+
+<a class="skip-link" href="#main-content">Перейти к основному содержимому</a>
 
 <!-- ============ BACKGROUND (same SVG as en/) ============ -->
 <svg class="cosmos-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -171,20 +145,20 @@
 <!-- ============ PLANETS ============ -->
 <div class="cosmos-planets" aria-hidden="true">
   <div class="planet planet--saturn" style="--top: 22%; --left: 83%; --size: 130px;">
-    <div class="planet__sphere" style="background-image: url('../planets/2k_saturn.jpg');"></div>
+    <div class="planet__sphere" style="background-image: url('../planets/optimized/saturn-512.webp');"></div>
     <div class="planet__shadow"></div>
-    <img class="planet__ring" src="../planets/2k_saturn_ring_alpha.png" alt=""/>
+    <img class="planet__ring" src="../planets/optimized/saturn-ring-512.webp" alt=""/>
   </div>
   <div class="planet planet--jupiter" style="--top: 81%; --left: 13%; --size: 200px;">
-    <div class="planet__sphere" style="background-image: url('../planets/2k_jupiter.jpg');"></div>
+    <div class="planet__sphere" style="background-image: url('../planets/optimized/jupiter-512.webp');"></div>
     <div class="planet__shadow"></div>
   </div>
   <div class="planet planet--uranus" style="--top: 65%; --left: 69%; --size: 60px;">
-    <div class="planet__sphere" style="background-image: url('../planets/2k_uranus.jpg');"></div>
+    <div class="planet__sphere" style="background-image: url('../planets/optimized/uranus-512.webp');"></div>
     <div class="planet__shadow"></div>
   </div>
   <div class="planet planet--moon" style="--top: 11%; --left: 52%; --size: 52px;">
-    <div class="planet__sphere" style="background-image: url('../planets/2k_moon.jpg');"></div>
+    <div class="planet__sphere" style="background-image: url('../planets/optimized/moon-512.webp');"></div>
     <div class="planet__shadow"></div>
   </div>
 </div>
@@ -237,11 +211,12 @@
 </header>
 
 <!-- ============ HERO ============ -->
+<main id="main-content">
 <section class="hero">
   <div class="wrap hero__inner">
     <div class="hero__copy">
       <div class="hero__eyebrow">
-        <span class="dot"></span>AI-АСТРОЛОГИЯ · GOOGLE PLAY МАЙ 2026
+        <span class="dot"></span>AI-АСТРОЛОГИЯ · РЕЛИЗ В GOOGLE PLAY ГОТОВИТСЯ
       </div>
       <h1 class="hero__h1">Твоя натальная карта,<br/>превращённая в магию.</h1>
       <p class="hero__epigraph">
@@ -251,13 +226,13 @@
         AstroGuide берёт дату, время и место рождения, считает реальное небо через Swiss Ephemeris и превращает его в личную AI-астрологию. Не общий текст про знак зодиака. А зеркало, компас и маленький фокус в кармане.
       </p>
       <div class="hero__ctas">
-        <a class="store-badge disabled" href="#" aria-label="Google Play — скоро" tabindex="-1">
+        <div class="store-badge release-status" role="status" aria-label="Релиз в Google Play готовится">
           <svg class="store-badge__icon" aria-hidden="true"><use href="#g-play"/></svg>
           <span class="store-badge__text">
-            <span class="store-badge__top">Скоро · май 2026</span>
+            <span class="store-badge__top">Релиз готовится</span>
             <span class="store-badge__name">Google Play</span>
           </span>
-        </a>
+        </div>
       </div>
       <div class="hero__caption">Бесплатная натальная карта · Гороскоп дня · Таро · Android первым</div>
     </div>
@@ -358,7 +333,7 @@
       <article class="feature">
         <div class="feature__phone">
           <div class="feature__screen">
-            <iframe src="../AstroGuide.html?screen=natal&amp;embed=1" loading="lazy" title="Натальная карта — интерактивный экран"></iframe>
+            <iframe data-demo-src="../AstroGuide.html?screen=natal&amp;embed=1" data-poster="../assets/demo-posters/ru/natal.webp" title="Натальная карта — интерактивный экран"></iframe>
           </div>
           <a class="feature__open" href="../AstroGuide.html?screen=natal" target="_blank" rel="noopener">
             <span>Открыть на полный экран</span>
@@ -375,7 +350,7 @@
       <article class="feature">
         <div class="feature__phone">
           <div class="feature__screen">
-            <iframe src="../AstroGuide.html?screen=horoscope&amp;sub=forecast&amp;period=day&amp;embed=1" loading="lazy" title="Прогноз на день — интерактивный"></iframe>
+            <iframe data-demo-src="../AstroGuide.html?screen=horoscope&amp;sub=forecast&amp;period=day&amp;embed=1" data-poster="../assets/demo-posters/ru/daily.webp" title="Прогноз на день — интерактивный"></iframe>
           </div>
           <a class="feature__open" href="../AstroGuide.html?screen=horoscope&amp;sub=forecast&amp;period=day" target="_blank" rel="noopener">
             <span>Открыть на полный экран</span>
@@ -392,7 +367,7 @@
       <article class="feature">
         <div class="feature__phone">
           <div class="feature__screen">
-            <iframe src="../AstroGuide.html?screen=days&amp;embed=1" loading="lazy" title="Календарь на 30 дней — интерактивный"></iframe>
+            <iframe data-demo-src="../AstroGuide.html?screen=days&amp;embed=1" data-poster="../assets/demo-posters/ru/days.webp" title="Календарь на 30 дней — интерактивный"></iframe>
           </div>
           <a class="feature__open" href="../AstroGuide.html?screen=days" target="_blank" rel="noopener">
             <span>Открыть на полный экран</span>
@@ -409,7 +384,7 @@
       <article class="feature">
         <div class="feature__phone">
           <div class="feature__screen">
-            <iframe src="../AstroGuide.html?screen=horoscope&amp;sub=journal&amp;embed=1" loading="lazy" title="Лунный дневник — интерактивный"></iframe>
+            <iframe data-demo-src="../AstroGuide.html?screen=horoscope&amp;sub=journal&amp;embed=1" data-poster="../assets/demo-posters/ru/journal.webp" title="Лунный дневник — интерактивный"></iframe>
           </div>
           <a class="feature__open" href="../AstroGuide.html?screen=horoscope&amp;sub=journal" target="_blank" rel="noopener">
             <span>Открыть на полный экран</span>
@@ -426,7 +401,7 @@
       <article class="feature">
         <div class="feature__phone">
           <div class="feature__screen">
-            <iframe src="../AstroGuide.html?screen=horoscope&amp;sub=synastry&amp;embed=1" loading="lazy" title="Совместимость — интерактивная"></iframe>
+            <iframe data-demo-src="../AstroGuide.html?screen=horoscope&amp;sub=synastry&amp;embed=1" data-poster="../assets/demo-posters/ru/synastry.webp" title="Совместимость — интерактивная"></iframe>
           </div>
           <a class="feature__open" href="../AstroGuide.html?screen=horoscope&amp;sub=synastry" target="_blank" rel="noopener">
             <span>Открыть на полный экран</span>
@@ -443,7 +418,7 @@
       <article class="feature">
         <div class="feature__phone">
           <div class="feature__screen">
-            <iframe src="../AstroGuide.html?screen=oracle&amp;sub=cardOfDay&amp;embed=1" loading="lazy" title="Оракул Таро — интерактивный"></iframe>
+            <iframe data-demo-src="../AstroGuide.html?screen=oracle&amp;sub=cardOfDay&amp;embed=1" data-poster="../assets/demo-posters/ru/card-of-day.webp" title="Оракул Таро — интерактивный"></iframe>
           </div>
           <a class="feature__open" href="../AstroGuide.html?screen=oracle&amp;sub=cardOfDay" target="_blank" rel="noopener">
             <span>Открыть на полный экран</span>
@@ -475,7 +450,7 @@
 
       <article class="tour-card">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide.html?welcome=1&amp;embed=1" loading="lazy" title="Заставка"></iframe>
+          <iframe data-demo-src="../AstroGuide.html?welcome=1&amp;embed=1" data-poster="../assets/demo-posters/ru/welcome.webp" title="Заставка"></iframe>
           <a class="tour-card__open" href="../AstroGuide.html?welcome=1" target="_blank" rel="noopener" aria-label="Открыть заставку на полный экран">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -491,7 +466,7 @@
 
       <article class="tour-card tour-card--rev">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide.html?screen=natal&amp;sub=natalCreate&amp;embed=1" loading="lazy" title="Создание натальной карты"></iframe>
+          <iframe data-demo-src="../AstroGuide.html?screen=natal&amp;sub=natalCreate&amp;embed=1" data-poster="../assets/demo-posters/ru/natal-create.webp" title="Создание натальной карты"></iframe>
           <a class="tour-card__open" href="../AstroGuide.html?screen=natal&amp;sub=natalCreate" target="_blank" rel="noopener" aria-label="Открыть создание карты на полный экран">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -507,7 +482,7 @@
 
       <article class="tour-card">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide.html?screen=horoscope&amp;hasNatal=0&amp;picker=own&amp;embed=1" loading="lazy" title="Выбор знака"></iframe>
+          <iframe data-demo-src="../AstroGuide.html?screen=horoscope&amp;hasNatal=0&amp;picker=own&amp;embed=1" data-poster="../assets/demo-posters/ru/sign-picker.webp" title="Выбор знака"></iframe>
           <a class="tour-card__open" href="../AstroGuide.html?screen=horoscope&amp;hasNatal=0&amp;picker=own" target="_blank" rel="noopener" aria-label="Открыть выбор знака на полный экран">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -523,7 +498,7 @@
 
       <article class="tour-card tour-card--rev">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide.html?screen=horoscope&amp;sub=forecast&amp;period=week&amp;embed=1" loading="lazy" title="Прогноз на неделю"></iframe>
+          <iframe data-demo-src="../AstroGuide.html?screen=horoscope&amp;sub=forecast&amp;period=week&amp;embed=1" data-poster="../assets/demo-posters/ru/weekly.webp" title="Прогноз на неделю"></iframe>
           <a class="tour-card__open" href="../AstroGuide.html?screen=horoscope&amp;sub=forecast&amp;period=week" target="_blank" rel="noopener" aria-label="Открыть прогноз на неделю на полный экран">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -539,7 +514,7 @@
 
       <article class="tour-card">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide.html?screen=horoscope&amp;sub=forecast&amp;period=month&amp;embed=1" loading="lazy" title="Прогноз на месяц"></iframe>
+          <iframe data-demo-src="../AstroGuide.html?screen=horoscope&amp;sub=forecast&amp;period=month&amp;embed=1" data-poster="../assets/demo-posters/ru/monthly.webp" title="Прогноз на месяц"></iframe>
           <a class="tour-card__open" href="../AstroGuide.html?screen=horoscope&amp;sub=forecast&amp;period=month" target="_blank" rel="noopener" aria-label="Открыть прогноз на месяц на полный экран">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -555,7 +530,7 @@
 
       <article class="tour-card tour-card--rev">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide.html?screen=horoscope&amp;sub=journalHistory&amp;embed=1" loading="lazy" title="История дневника"></iframe>
+          <iframe data-demo-src="../AstroGuide.html?screen=horoscope&amp;sub=journalHistory&amp;embed=1" data-poster="../assets/demo-posters/ru/journal-history.webp" title="История дневника"></iframe>
           <a class="tour-card__open" href="../AstroGuide.html?screen=horoscope&amp;sub=journalHistory" target="_blank" rel="noopener" aria-label="Открыть историю дневника на полный экран">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -571,7 +546,7 @@
 
       <article class="tour-card">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide.html?screen=oracle&amp;sub=spread&amp;embed=1" loading="lazy" title="Расклад на 3 карты"></iframe>
+          <iframe data-demo-src="../AstroGuide.html?screen=oracle&amp;sub=spread&amp;embed=1" data-poster="../assets/demo-posters/ru/spread.webp" title="Расклад на 3 карты"></iframe>
           <a class="tour-card__open" href="../AstroGuide.html?screen=oracle&amp;sub=spread" target="_blank" rel="noopener" aria-label="Открыть расклад на полный экран">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -587,7 +562,7 @@
 
       <article class="tour-card tour-card--rev">
         <div class="tour-card__phone">
-          <iframe src="../AstroGuide.html?screen=profile&amp;embed=1" loading="lazy" title="Профиль и настройки"></iframe>
+          <iframe data-demo-src="../AstroGuide.html?screen=profile&amp;embed=1" data-poster="../assets/demo-posters/ru/profile.webp" title="Профиль и настройки"></iframe>
           <a class="tour-card__open" href="../AstroGuide.html?screen=profile" target="_blank" rel="noopener" aria-label="Открыть настройки на полный экран">
             <svg aria-hidden="true"><use href="#arrow-ne"/></svg>
           </a>
@@ -722,7 +697,7 @@
       <details>
         <summary>AstroGuide бесплатный?</summary>
         <div>
-          Да. Android-приложение выходит в Google Play в мае 2026 с настоящим бесплатным тарифом: ежедневный гороскоп, полная натальная карта, базовый лунный ритуал и совместимость по знаку Солнца. Premium добавляет транзиты на месяц вперёд, подробную совместимость и полный оракул Таро. <em>Одна подписка, одна цена, никаких игр в разблокировку отдельных функций.</em>
+          Да. Android-приложение готовится к выходу в Google Play с настоящим бесплатным тарифом: ежедневный гороскоп, полная натальная карта, базовый лунный ритуал и совместимость по знаку Солнца. Premium добавляет транзиты на месяц вперёд, подробную совместимость и полный оракул Таро. <em>Одна подписка, одна цена, никаких игр в разблокировку отдельных функций.</em>
         </div>
       </details>
       <details>
@@ -766,6 +741,8 @@
 </section>
 
 <!-- ============ FOOTER ============ -->
+</main>
+
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
@@ -790,7 +767,7 @@
       <div>
         <div class="footer-col__title">Связаться</div>
         <ul class="footer-col__list">
-          <li><a href="mailto:support@astroguides.app">support@astroguides.app</a></li>
+          <li><a href="support.html">Обратиться в поддержку</a></li>
         </ul>
       </div>
     </div>
@@ -805,49 +782,7 @@
   </div>
 </footer>
 
-<a class="store-badge floating-play disabled" href="#" aria-label="Google Play — скоро" tabindex="-1">
-  <svg class="store-badge__icon" aria-hidden="true"><use href="#g-play"/></svg>
-  <span class="store-badge__text">
-    <span class="store-badge__top">Скоро · май 2026</span>
-    <span class="store-badge__name">GooglePlay</span>
-  </span>
-</a>
-
-<script>
-  (function() {
-    const svg = document.getElementById('starfield-stars');
-    if (!svg) return;
-    let s = 7, rng = () => (s = (s * 9301 + 49297) % 233280) / 233280;
-    let out = '';
-    for (let i = 0; i < 140; i++) {
-      const x = (rng() * 1440) | 0;
-      const y = (rng() * 2400) | 0;
-      const r = rng() < 0.08 ? (1.4 + rng()).toFixed(1) : (0.4 + rng() * 0.8).toFixed(2);
-      const op = (0.25 + rng() * 0.55).toFixed(2);
-      const dur = (3 + rng() * 5).toFixed(1);
-      const delay = (rng() * 6).toFixed(1);
-      out += `<circle cx="${x}" cy="${y}" r="${r}" fill="url(#starGrad)" opacity="${op}">`
-           + `<animate attributeName="opacity" values="${(op*0.4).toFixed(2)};${op};${(op*0.4).toFixed(2)}" dur="${dur}s" begin="-${delay}s" repeatCount="indefinite"/>`
-           + `</circle>`;
-    }
-    svg.innerHTML = out;
-  })();
-  (function() {
-    if (!('IntersectionObserver' in window)) return;
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
-    document.querySelectorAll('.feature, .creed__card, .step, .disclaimer-block, .hero__copy, .hero__visual').forEach(el => {
-      el.classList.add('reveal');
-      io.observe(el);
-    });
-  })();
-</script>
+<script defer src="../landing.js"></script>
 
 </body>
 </html>

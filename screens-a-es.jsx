@@ -159,9 +159,9 @@ function HoroscopeForSign({ sign, onOpenPeriod, onOpenJournal, onOpenSynastry, o
       </div>
       <div><GlyphDivider/></div>
       <div className="col gap-10">
-        <PeriodTile glyph="☉" label="HOY"          desc="Martes · 12 de mayo" onClick={() => onOpenPeriod('day')}/>
-        <PeriodTile glyph="☽" label="ESTA SEMANA"  desc="12 — 18 de mayo"     onClick={() => onOpenPeriod('week')}/>
-        <PeriodTile glyph="✦" label="ESTE MES"     desc="Mayo de 2026"        onClick={() => onOpenPeriod('month')}/>
+        <PeriodTile glyph="☉" label="DÍA"     desc="Pronóstico de muestra" onClick={() => onOpenPeriod('day')}/>
+        <PeriodTile glyph="☽" label="SEMANA"  desc="Pronóstico de muestra" onClick={() => onOpenPeriod('week')}/>
+        <PeriodTile glyph="✦" label="MES"     desc="Pronóstico de muestra" onClick={() => onOpenPeriod('month')}/>
       </div>
       <div><GlyphDivider/></div>
       <div className="col gap-10">
@@ -200,9 +200,9 @@ function HoroscopeForNatal({ name, onOpenPeriod, onOpenJournal, onOpenSynastry, 
         </div>
       </div>
       <div className="col gap-10">
-        <PeriodTile glyph="☉" label="HOY"          desc="Martes · 12 de mayo" onClick={() => onOpenPeriod('day')}/>
-        <PeriodTile glyph="☽" label="ESTA SEMANA"  desc="12 — 18 de mayo"     onClick={() => onOpenPeriod('week')}/>
-        <PeriodTile glyph="✦" label="ESTE MES"     desc="Mayo de 2026"        onClick={() => onOpenPeriod('month')}/>
+        <PeriodTile glyph="☉" label="DÍA"     desc="Pronóstico de muestra" onClick={() => onOpenPeriod('day')}/>
+        <PeriodTile glyph="☽" label="SEMANA"  desc="Pronóstico de muestra" onClick={() => onOpenPeriod('week')}/>
+        <PeriodTile glyph="✦" label="MES"     desc="Pronóstico de muestra" onClick={() => onOpenPeriod('month')}/>
       </div>
       <div><GlyphDivider/></div>
       <div className="col gap-10">
@@ -255,7 +255,7 @@ function ForecastScreen({ period, sign, name, hasNatal, onBack }) {
                 <div className="section-label" style={{ fontSize: 10 }}>{d.kind}</div>
                 <div style={{ fontFamily: 'Forum', fontSize: 14, letterSpacing: '0.16em',
                               textTransform: 'uppercase', color: 'var(--text)', marginTop: 3 }}>
-                  {hasNatal ? name : s.full} · 12 de mayo de 2026
+                  {hasNatal ? name : s.full} · Lectura de muestra
                 </div>
               </div>
             </div>

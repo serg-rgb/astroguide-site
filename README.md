@@ -103,7 +103,9 @@ Production SEO metadata is intentionally absolute:
 
 **Attribution required**: Solar System Scope textures are CC-BY-4.0 from <https://www.solarsystemscope.com/textures/>. Add an attribution line to the colophon or `/about` in the final site.
 
-**Rotation behaviour**: only Jupiter rotates (~90 s per revolution, equatorial scroll on a cylindrical texture). Saturn, Uranus, and the Moon are static — at their on-page sizes the motion didn't read and consumed CPU for no gain.
+Production pages use the 512px WebP variants in `planets/optimized/`; the original
+files stay in the repository for attribution/source fidelity. All planet motion is
+disabled to avoid continuous GPU work on mobile devices.
 
 ---
 
@@ -128,10 +130,25 @@ Production SEO metadata is intentionally absolute:
 
 ## Engineering handoff notes
 
-- All CSS is in two flat files (`tokens.css` + `landing.css`). No build step needed.
-- The starfield + scroll-reveal scripts are inline in each page (~30 lines). Move to a single shared `landing.js` during the Next.js port if you prefer.
+- Landing CSS is in two flat files (`tokens.css` + `landing.css`), and shared
+  behavior lives in `landing.js`.
+- The first paint uses 42 localized WebP posters. Interactive prototypes are
+  created only after a visitor presses a preview button; only one sandboxed
+  iframe remains loaded at a time.
+- Prototype production shells load the local minified React runtime in `vendor/`
+  and the locale bundles `astroguide-*.min.js`. Source JSX remains alongside the
+  bundles for maintenance. Rebuild all three deterministically with
+  `npm ci && npm run build:prototypes`; the ordered source manifest lives in
+  `scripts/build-prototypes.mjs`.
 - `<details>`-based FAQ works without JS.
-- Forms POST to `/api/account-deletion` and `/api/support` — wire as Next.js Route Handlers, validate input, run Turnstile server-side check, forward to Resend.
+- Support and deletion forms POST to `https://api.astroguides.app/api/v1/...`.
+  The backend validates, rate-limits and queues requests in persistent Redis
+  before attempting optional SMTP notification.
+- `_headers` contains the production CSP, HSTS, privacy and asset-cache
+  policy for hosts that support this file (for example Cloudflare Pages). GitHub
+  Pages ignores `_headers`, so configure the same values at a CDN/reverse proxy
+  before public launch; `frame-ancestors 'self'` is intentional because the
+  prototype shells are embedded by the same origin.
 - The `og-image.png` is referenced from `<meta property="og:image">` because Twitter/X, Facebook, and LinkedIn do not reliably parse SVG previews.
 - Do not reintroduce a client-side locale redirect at `/`. If the Next.js port adds language detection, use a server-side redirect only after deciding whether `/` should remain the public x-default canonical.
 
@@ -141,6 +158,8 @@ Production SEO metadata is intentionally absolute:
 
 1. **Legal review** of the localized Privacy/Terms — the translations are accurate to the EN voice but a lawyer should sign off on the RU and ES versions before a launch that takes payments.
 2. **Press section** — slot reserved above the footer, not built yet.
-3. **Optional**: add Apple App Store badge once iOS is on the roadmap (currently only Google Play CTA, with "Coming soon" microcopy).
+3. **Deployment configuration**: set the API secrets/origins documented in the
+   backend `.env.example`, publish both repositories, and apply `_headers` at the
+   edge in front of GitHub Pages.
 
 That's it.

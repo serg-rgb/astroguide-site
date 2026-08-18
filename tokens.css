@@ -26,7 +26,8 @@
   /* ─── Text ─── */
   --text:        #F0E8D8;
   --text-mute:   #8A8275;
-  --text-faint:  #5A5547;
+  /* 4.59:1 against --bg: keeps tertiary copy readable at WCAG AA. */
+  --text-faint:  #80786A;
 
   /* ─── Borders ─── */
   --border:        rgba(201, 168, 106, 0.18);

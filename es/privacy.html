@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="../tokens.css"/>
   <link rel="stylesheet" href="../landing.css"/>
 </head>
-<body>
+<body data-starfield-seed="11" data-starfield-count="100">
 <svg class="starfield-bg" viewBox="0 0 1440 2400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
   <defs><radialGradient id="starGrad"><stop offset="0%" stop-color="#E8D29E"/><stop offset="100%" stop-color="#E8D29E" stop-opacity="0"/></radialGradient></defs>
   <g id="starfield-stars"></g>
@@ -54,6 +54,7 @@
   </symbol>
 </svg>
 
+<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
 <header class="site-header">
   <div class="wrap site-header__inner">
     <a class="logo" href="/es/"><svg class="logo__sigil" style="color: var(--gold)"><use href="#sigil"/></svg><span class="logo__mark">AstroGuide</span></a>
@@ -72,12 +73,12 @@
   </div>
 </header>
 
-<main class="legal">
+<main id="main-content" class="legal">
   <div class="wrap">
     <header class="legal__head">
       <div class="legal__eyebrow">LEGAL</div>
       <h1 class="legal__title">Política de Privacidad</h1>
-      <div class="legal__updated">Vigente desde el 14 de mayo de 2026</div>
+      <div class="legal__updated">Vigente desde el 18 de agosto de 2026</div>
     </header>
 
     <div class="legal__body">
@@ -93,43 +94,51 @@
       </aside>
 
       <article class="legal__article">
-        <p><em>Esta página es el resumen en español llano. Es la política en sí, escrita en un lenguaje que una persona puede leer de verdad. Si prefieres una versión formal más larga en papel con membrete, escríbenos a <a href="mailto:support@astroguides.app">support@astroguides.app</a> y te la enviaremos.</em></p>
+        <p><em>Esta es la política de privacidad de AstroGuide, escrita en lenguaje claro. Si algo no queda claro, contáctanos mediante el <a href="support.html">formulario de soporte</a>.</em></p>
 
         <h2 id="what">Qué recopilamos</h2>
-        <p>AstroGuide recopila solo lo necesario para dibujar tu carta y recordar lo que escribes en tu diario lunar:</p>
+        <p>AstroGuide procesa los siguientes datos para prestar la app y operarla de forma segura:</p>
         <ul>
           <li><strong>Datos de nacimiento</strong> — fecha, hora (opcional) y lugar de nacimiento.</li>
           <li><strong>Nombre mostrado</strong> — cómo llamarte dentro de la app.</li>
           <li><strong>Entradas del diario</strong> — texto que escribes tú, en tu propio dispositivo.</li>
-          <li><strong>Correo de la cuenta</strong> — solo si decides hacer copia de seguridad en la nube.</li>
-          <li><strong>Datos técnicos</strong> — registros de crash anónimos y un ID de instalación único, usados para que la app no se rompa.</li>
+          <li><strong>Datos de cuenta</strong> — identificador de Google, correo y nombre mostrado si eliges iniciar sesión con Google.</li>
+          <li><strong>Datos técnicos</strong> — identificador de instalación, token de sesión firmado, idioma/versión, token de notificaciones si están activadas y estado/token de compra al usar Google Play Billing.</li>
+          <li><strong>Análisis de uso opcional</strong> — eventos permitidos como apertura, vista de pantalla/paywall y resultado de compra o restauración. Puedes desactivarlo en Ajustes.</li>
+          <li><strong>Reportes de contenido de IA</strong> — tipo/identificador del contenido, motivo elegido y hasta 500 caracteres de contexto opcional cuando eliges Reportar.</li>
+          <li><strong>Solicitudes de soporte y eliminación</strong> — correo, nombre opcional, tema/motivo y mensaje enviados mediante el sitio.</li>
         </ul>
         <p><strong>No</strong> recopilamos contactos, ubicación (más allá de la ciudad de nacimiento), fotos, micrófono, calendario, historial de navegación, ni nada de tus otras apps.</p>
 
         <h2 id="why">Por qué lo recopilamos</h2>
-        <p>Los datos de nacimiento y el nombre mostrado son necesarios para la función central de la app — dibujar una carta personal. Las entradas del diario existen para que el diario funcione. El correo de la cuenta existe para que la copia de seguridad encuentre tus datos cuando reinstales. Los registros de crash nos ayudan a arreglar bugs que de otra forma nunca veríamos.</p>
+        <p>Los datos de nacimiento y el nombre se usan para calcular y redactar lecturas. El diario permanece local. Los datos de cuenta y compra restauran tu carta y acceso en otros dispositivos; se requiere iniciar sesión con Google antes de comprar para poder recuperar el acceso tras reinstalar. Los datos de notificaciones entregan los mensajes que activas. El análisis opcional muestra qué flujos funcionan; nunca incluye nombres, datos de nacimiento, texto de diario/chat, correo, tokens de compra, URL ni mensajes de error. Los reportes se usan para revisión de seguridad y prevención de abuso.</p>
         <blockquote>Si un dato no es necesario para que la app cumpla su función, no lo pedimos.</blockquote>
 
         <h2 id="storage">Dónde vive</h2>
-        <p>Por defecto, todo se queda en tu teléfono. Cifrado en reposo usando el almacén de claves del sistema operativo.</p>
-        <p>Si activas la copia de seguridad en la nube, tus datos se envían por HTTPS a nuestros servidores (alojados en la Unión Europea), se cifran en reposo y se vinculan solo a tu cuenta. Podemos leerlos con el propósito de restaurarlos en tu próximo dispositivo. No los leemos para ningún otro propósito.</p>
+        <p>El diario y los perfiles de pareja se almacenan en el espacio privado de Android. AstroGuide desactiva la copia en la nube y la transferencia de todos los datos de la app para que datos borrados no vuelvan desde una copia antigua. El acceso de pago se recupera mediante la cuenta de Google vinculada.</p>
+        <p>Los datos de nacimiento, cartas calculadas, lecturas generadas, vínculos de cuenta, registro de notificaciones y acceso por compra se envían por HTTPS a nuestro backend porque esas funciones no pueden operar solo en el dispositivo. La caché de pronósticos suele caducar a los 7 días; los reportes de IA se conservan hasta 180 días; el análisis agregado hasta 400 días; la cola de soporte hasta 90 días; y las solicitudes de eliminación pendientes hasta 45 días. Carta, cuenta, notificaciones y acceso permanecen mientras la cuenta esté activa o hasta su eliminación. Durante el borrado, un identificador puede permanecer hasta 24 horas en una tarea de limpieza para capturar escrituras de solicitudes ya activas. Después solo queda un marcador de revocación con hash unidireccional durante la vigencia de la sesión más un día (actualmente hasta 366 días), para impedir que un token antiguo recree la cuenta.</p>
+        <p>El análisis guarda solo contadores diarios. El identificador de cuenta se usa de forma transitoria para una estimación irreversible y específica de usuarios activos por día; no se conserva como fila de evento.</p>
 
         <h2 id="third-parties">Terceros</h2>
-        <p>Usamos tres servicios externos, listados aquí para que sepas exactamente quién ve qué:</p>
+        <p>Usamos los siguientes servicios externos:</p>
         <ul>
-          <li><strong>OpenRouter</strong> — recibe posiciones y aspectos de la carta anonimizados y estructurados, y devuelve prosa. <em>No</em> recibe tu nombre, correo, fecha de nacimiento ni ninguna información identificativa. El mismo prompt produciría la misma prosa para cualquier persona con la misma carta.</li>
+          <li><strong>OpenRouter y el proveedor de modelo seleccionado</strong> — reciben datos estructurados de la carta y, según la función, pueden recibir nombre mostrado, edad o fecha/hora/lugar de nacimiento, lugar actual, género, perfil de pareja y una pregunta escrita. No reciben correo, ID de cuenta, diario, token de compra/notificación ni historial analítico.</li>
+          <li><strong>OpenStreetMap Nominatim</strong> — recibe el texto de búsqueda del lugar de nacimiento para resolver coordenadas.</li>
           <li><strong>Google Play Billing</strong> — gestiona las compras de suscripción. Reciben un token de compra; nosotros recibimos una confirmación. Tu carta nunca la ven.</li>
-          <li><strong>Vercel Analytics</strong> — agrega conteos anónimos de visitas para este sitio web. Sin cookies, sin datos personales.</li>
+          <li><strong>Inicio de sesión con Google</strong> — verifica tu identidad solo si decides iniciar sesión.</li>
+          <li><strong>Firebase Cloud Messaging</strong> — procesa un token del dispositivo y datos de entrega solo si activas notificaciones.</li>
         </ul>
+        <p>El análisis de uso es first-party: va al backend propio de AstroGuide, no a un SDK publicitario o analítico externo.</p>
         <p>No hemos vendido, no vendemos y no venderemos tus datos a anunciantes ni a brokers de datos.</p>
 
         <h2 id="rights">Tus derechos</h2>
         <p>En cualquier momento puedes:</p>
         <ul>
-          <li>Ver todo lo que tenemos sobre ti (en la app: Ajustes → Acerca de → Exportar mis datos).</li>
+          <li>Solicitar a soporte una copia de los datos vinculados al correo de tu cuenta.</li>
           <li>Corregirlo.</li>
           <li>Eliminarlo — ver <a href="account-deletion.html">Eliminación de cuenta</a>.</li>
-          <li>Retirar el consentimiento para la copia en la nube — tus datos se quedan en tu dispositivo.</li>
+          <li>Desactivar el análisis en Ajustes y las notificaciones en la app o en los ajustes de Android.</li>
+          <li>Restaurar compras elegibles de Google Play tras iniciar sesión con la misma cuenta de Google vinculada.</li>
         </ul>
         <p>Si vives en una jurisdicción con derechos más fuertes (GDPR, CCPA, LGPD u otras), se aplican.</p>
 
@@ -137,7 +146,7 @@
         <p>AstroGuide no está pensada para menores de 16 años. No recopilamos a sabiendas datos de menores. Si descubrimos que lo hemos hecho, los eliminamos.</p>
 
         <h2 id="contact">Contacto</h2>
-        <p>Preguntas, solicitudes o quejas: <a href="mailto:support@astroguides.app">support@astroguides.app</a>. Procuramos responder en cinco días laborables.</p>
+        <p>Preguntas, solicitudes o quejas: <a href="support.html">formulario de soporte</a>.</p>
 
         <hr/>
         <p><em>Esta política puede cambiar. Cuando cambie, mostraremos aquí la nueva fecha de vigencia y te avisaremos en la app la próxima vez que la abras. Los cambios materiales requerirán consentimiento renovado.</em></p>
@@ -153,21 +162,6 @@
   </div>
 </footer>
 
-<script>
-(function(){
-  const svg=document.getElementById('starfield-stars');if(!svg)return;
-  let s=11,rng=()=>(s=(s*9301+49297)%233280)/233280;let out='';
-  for(let i=0;i<100;i++){const x=(rng()*1440)|0,y=(rng()*2400)|0,r=rng()<0.08?(1.4+rng()).toFixed(1):(0.4+rng()*0.8).toFixed(2);
-    const op=(0.25+rng()*0.55).toFixed(2),dur=(3+rng()*5).toFixed(1),delay=(rng()*6).toFixed(1);
-    out+=`<circle cx="${x}" cy="${y}" r="${r}" fill="url(#starGrad)" opacity="${op}"><animate attributeName="opacity" values="${(op*0.4).toFixed(2)};${op};${(op*0.4).toFixed(2)}" dur="${dur}s" begin="-${delay}s" repeatCount="indefinite"/></circle>`}
-  svg.innerHTML=out;
-})();
-(function(){
-  const links=[...document.querySelectorAll('.legal__toc a')];
-  const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const a=links.find(l=>l.getAttribute('href')==='#'+e.target.id);if(a)a.classList.add('active')}})},{rootMargin:'-30% 0px -60% 0px'});
-  sections.forEach(s=>s&&io.observe(s));
-})();
-</script>
+<script defer src="../landing.js"></script>
 </body>
 </html>
