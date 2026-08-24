@@ -66,20 +66,23 @@
 </header>
 
 <article class="legal__article">
-<p><em>Puedes irte en cualquier momento. La eliminación desde la app borra de inmediato los datos activos; una solicitud web verificada se completa en un máximo de 30 días.</em></p>
+<p><em>Puedes irte en cualquier momento. El método de eliminación depende de si tu perfil de AstroGuide es anónimo o está vinculado con Google.</em></p>
 
 <h2>La forma más rápida: desde dentro de la app</h2>
-<p>Abre AstroGuide → <strong>Ajustes → Acerca de → Eliminar cuenta</strong>. Revisa qué se eliminará y confirma. Los datos locales se limpian y la cuenta asociada del servidor se borra de inmediato. Esto no cancela una suscripción de Google Play.</p>
+<p>Abre AstroGuide → <strong>Ajustes → Acerca de → Eliminar cuenta</strong>. Revisa qué se eliminará y confirma. Esta vía autenticada dentro de la app sirve tanto para perfiles anónimos instalados como para perfiles vinculados con Google. Los datos locales se limpian y la cuenta asociada del servidor se borra de inmediato. Esto no cancela una suscripción de Google Play.</p>
 
-<h2>Si ya desinstalaste la app</h2>
-<p>Si ya no tienes la app, completa el formulario. Antes de borrar una cuenta enviaremos un enlace de verificación a ese correo. Si la verificación automática no está disponible, soporte revisará la solicitud y la completará en 30 días.</p>
+<h2>Si vinculaste una cuenta de Google y ya desinstalaste la app</h2>
+<p>Usa el formulario con el correo de Google vinculado a AstroGuide. Enviamos un enlace de verificación antes de procesar la cuenta vinculada que coincida. El recibo de la solicitud o la verificación del correo no demuestran por sí solos que encontramos o eliminamos una cuenta; la página final indica solo lo que se puede confirmar.</p>
+
+<h2>Si tu perfil es anónimo y la app no está disponible</h2>
+<p>La API de eliminación de AstroGuide puede autenticar criptográficamente un perfil anónimo mediante su ID de usuario anónimo y secreto de recuperación. Este formulario estático de correo no recopila ni guarda deliberadamente ninguna de esas credenciales, así que no puede enviar una eliminación anónima. Si aún tienes la app, usa la vía interna indicada arriba. Si ya no tienes acceso a esa instalación, envía una <a href="support.html">solicitud a soporte</a> para pedir una vía segura de recuperación, pero <strong>no pegues el secreto de recuperación en el formulario</strong>. El acuse de recibo no confirma la eliminación.</p>
 
 <div class="form-card">
 <form name="account-deletion" action="https://api.astroguides.app/api/v1/account-deletion" method="POST">
 <input type="hidden" name="language" value="es"/>
 <div class="form-honeypot" aria-hidden="true"><label>Deja este campo vacío<input name="website" type="text" tabindex="-1" autocomplete="off"/></label></div>
 <div class="form-card__field">
-<label for="email">Correo usado en la app</label>
+<label for="email">Correo de Google vinculado a AstroGuide</label>
 <input id="email" name="email" type="email" required maxlength="254" autocomplete="email" placeholder="tu@example.com"/>
 </div>
 <div class="form-card__field">
@@ -93,14 +96,14 @@
 <div class="form-card__field">
 <label class="checkbox">
 <input type="checkbox" name="confirm" required/>
-<span>Entiendo que mis datos se eliminarán de forma permanente en treinta días y no se podrán recuperar.</span>
+<span>Entiendo que esto envía una solicitud para una cuenta vinculada; la eliminación solo ocurre tras verificar y encontrar una cuenta coincidente.</span>
 </label>
 </div>
 <div class="form-card__field" style="margin-top: var(--sp-6)">
 <button class="btn-primary" type="submit">Solicitar eliminación</button>
 </div>
 <p class="muted" style="font-size: 12px; margin-top: var(--sp-4); line-height: 1.6">
-Al enviar, solicitas eliminar permanentemente la cuenta de AstroGuide asociada al correo. Puede requerirse verificar la dirección. El diario se guarda de forma local, no en el servidor de AstroGuide; su copia local desaparece al desinstalar o eliminar la cuenta desde la app. Las solicitudes verificadas son definitivas y se completan en 30 días.
+Al enviar, solicitas eliminar una cuenta de AstroGuide vinculada con Google y asociada a este correo. La verificación es obligatoria. Recibir un número de solicitud no confirma que hayamos encontrado o eliminado una cuenta. El diario se guarda de forma local, no en el servidor de AstroGuide; su copia local desaparece al desinstalar o eliminar la cuenta desde la app. La eliminación verificada de una cuenta coincidente es definitiva y no se puede recuperar.
 </p>
 </form>
 </div>
@@ -122,7 +125,7 @@ Al enviar, solicitas eliminar permanentemente la cuenta de AstroGuide asociada a
 </ul>
 
 <h2>Plazos</h2>
-<p>La eliminación desde la app se procesa de inmediato. Para la vía web, abre el correo enviado a la dirección de la cuenta; después de confirmar, la eliminación es definitiva. Las solicitudes con revisión manual se completan en <strong>30 días</strong>.</p>
+<p>La eliminación desde la app se procesa de inmediato. Para una cuenta vinculada con Google, abre el mensaje enviado al correo vinculado. La página de finalización correcta confirma la eliminación; el estado «no encontrada» significa que no se eliminó ninguna cuenta. Las solicitudes que requieren revisión manual se tramitan en <strong>30 días</strong>. La eliminación anónima requiere la vía autenticada dentro de la app o ambas credenciales de recuperación, que este formulario de correo no recopila.</p>
 
 <hr/>
 <p><em>Si estás eliminando porque algo salió mal, nos encantaría saberlo. Escríbenos directo a <a href="support.html">formulario de soporte</a>.</em></p>

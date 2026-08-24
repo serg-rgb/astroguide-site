@@ -66,20 +66,23 @@
 </header>
 
 <article class="legal__article">
-<p><em>You can leave at any time. In-app deletion removes the active account data immediately; verified web requests are completed within 30 days.</em></p>
+<p><em>You can leave at any time. The deletion method depends on whether your AstroGuide profile is anonymous or linked to Google.</em></p>
 
 <h2>The fastest way: from inside the app</h2>
-<p>Open AstroGuide → <strong>Settings → About → Delete account</strong>. Review what will be removed and confirm. Local app data is cleared and the associated server account is erased immediately. This does not cancel a Google Play subscription.</p>
+<p>Open AstroGuide → <strong>Settings → About → Delete account</strong>. Review what will be removed and confirm. This authenticated in-app route supports both anonymous install-only profiles and profiles linked to Google. Local app data is cleared and the associated server account is erased immediately. This does not cancel a Google Play subscription.</p>
 
-<h2>If you've already uninstalled</h2>
-<p>If the app is gone, fill the form below. We send a verification link to the submitted address before deleting an account. If automated verification is unavailable, the request remains queued for support review and is completed within 30 days.</p>
+<h2>If you linked a Google account and already uninstalled</h2>
+<p>Use the form below with the Google email linked to AstroGuide. We send a verification link before processing the matching linked account. A request receipt or email verification is not, by itself, proof that an account was found or deleted; the completion page states only what can be confirmed.</p>
+
+<h2>If your profile is anonymous and the app is unavailable</h2>
+<p>AstroGuide's deletion API can cryptographically authenticate an anonymous profile using its anonymous user ID and recovery secret. This static email form deliberately does not collect or store either credential, so it cannot submit an anonymous deletion. If you still have the app, use the in-app route above. If you no longer have access to that installation, send a <a href="support.html">support request</a> to ask for a safe recovery path, but <strong>do not paste a recovery secret into the form</strong>. A support acknowledgment is not a deletion confirmation.</p>
 
 <div class="form-card">
 <form name="account-deletion" action="https://api.astroguides.app/api/v1/account-deletion" method="POST">
 <input type="hidden" name="language" value="en"/>
 <div class="form-honeypot" aria-hidden="true"><label>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"/></label></div>
 <div class="form-card__field">
-<label for="email">Email used in the app</label>
+<label for="email">Google email linked to AstroGuide</label>
 <input id="email" name="email" type="email" required maxlength="254" autocomplete="email" placeholder="you@example.com"/>
 </div>
 <div class="form-card__field">
@@ -93,14 +96,14 @@
 <div class="form-card__field">
 <label class="checkbox">
 <input type="checkbox" name="confirm" required/>
-<span>I understand my data will be permanently deleted within thirty days and cannot be recovered.</span>
+<span>I understand this submits a deletion request for a linked account; deletion occurs only after verification and a matching account is found.</span>
 </label>
 </div>
 <div class="form-card__field" style="margin-top: var(--sp-6)">
 <button class="btn-primary" type="submit">Request deletion</button>
 </div>
 <p class="muted" style="font-size: 12px; margin-top: var(--sp-4); line-height: 1.6">
-By submitting, you request permanent deletion of the AstroGuide account associated with this email. Email verification may be required. The app journal is stored locally rather than on AstroGuide's server; uninstalling or in-app deletion removes that local copy. Verified requests are final and completed within 30 days.
+By submitting, you request deletion of a Google-linked AstroGuide account associated with this email. Verification is required. Receiving a request number does not confirm that an account was found or deleted. The app journal is stored locally rather than on AstroGuide's server; uninstalling or in-app deletion removes that local copy. A matched, verified deletion is final and cannot be recovered.
 </p>
 </form>
 </div>
@@ -122,7 +125,7 @@ By submitting, you request permanent deletion of the AstroGuide account associat
 </ul>
 
 <h2>Timeline</h2>
-<p>In-app deletion is processed immediately. For the web route, open the verification message sent to your account email; after confirmation, deletion is final. Requests requiring manual verification are completed within <strong>30 days</strong>.</p>
+<p>In-app deletion is processed immediately. For a Google-linked account, open the verification message sent to the linked email. A successful completion page confirms deletion; a not-found status means no account was deleted. Requests requiring manual review are handled within <strong>30 days</strong>. Anonymous deletion requires the authenticated in-app path or both anonymous recovery credentials, which this email form does not collect.</p>
 
 <hr/>
 <p><em>If you're deleting because something went wrong, we'd love to hear about it. Reach <a href="support.html">support form</a> directly.</em></p>

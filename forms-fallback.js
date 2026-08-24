@@ -7,9 +7,10 @@
     en: {
       sending: 'Sending…',
       success: 'Thank you. Your request was received. Reference: ',
-      deletionSent: 'Check your inbox and open the verification link within 24 hours. Request: ',
-      deletionQueued: 'We could not deliver the verification email yet. Your request is safely queued for support review and delivery retry. Reference: ',
-      deletionDone: 'Your verified deletion request has been completed. Google Play subscriptions must be cancelled separately.',
+      deletionSent: 'Request received. Check your inbox and open the verification link within 24 hours. This receipt does not confirm deletion. Request: ',
+      deletionQueued: 'Request received, but we could not deliver the verification email yet. Support will review it and retry delivery. This receipt does not confirm deletion. Reference: ',
+      deletionCompleted: 'Your AstroGuide account and its associated data were permanently deleted. Google Play subscriptions must be cancelled separately.',
+      deletionNotFound: 'No matching account was found, so no account was deleted. Check the linked Google email, or use authenticated in-app deletion. This static email form cannot accept anonymous recovery credentials.',
       restored: 'Your unfinished form was restored in this tab.',
       invalid: 'Please check the highlighted fields.',
       error: 'We could not send this right now. Your text is saved in this tab; please try again.',
@@ -18,9 +19,10 @@
     es: {
       sending: 'Enviando…',
       success: 'Gracias. Recibimos tu solicitud. Referencia: ',
-      deletionSent: 'Revisa tu correo y abre el enlace de verificación en 24 horas. Solicitud: ',
-      deletionQueued: 'Aún no pudimos entregar el correo de verificación. La solicitud está en cola para revisión y reintento. Referencia: ',
-      deletionDone: 'La solicitud verificada se completó. Las suscripciones de Google Play se cancelan por separado.',
+      deletionSent: 'Solicitud recibida. Revisa tu correo y abre el enlace de verificación en 24 horas. Este recibo no confirma la eliminación. Solicitud: ',
+      deletionQueued: 'Solicitud recibida, pero aún no pudimos entregar el correo de verificación. Soporte la revisará y reintentará el envío. Este recibo no confirma la eliminación. Referencia: ',
+      deletionCompleted: 'Tu cuenta de AstroGuide y sus datos asociados se eliminaron de forma permanente. Las suscripciones de Google Play deben cancelarse por separado.',
+      deletionNotFound: 'No encontramos una cuenta coincidente, por lo que no se eliminó ninguna cuenta. Revisa el correo de Google vinculado o usa la eliminación autenticada dentro de la app. Este formulario estático de correo no acepta credenciales de recuperación anónimas.',
       restored: 'Restauramos el formulario sin terminar en esta pestaña.',
       invalid: 'Revisa los campos resaltados.',
       error: 'No pudimos enviarlo ahora. El texto está guardado en esta pestaña; inténtalo de nuevo.',
@@ -29,9 +31,10 @@
     ru: {
       sending: 'Отправляем…',
       success: 'Спасибо. Запрос получен. Номер: ',
-      deletionSent: 'Проверьте почту и откройте ссылку подтверждения в течение 24 часов. Запрос: ',
-      deletionQueued: 'Письмо подтверждения пока не доставлено. Запрос сохранён в очереди поддержки, отправка будет повторена. Номер: ',
-      deletionDone: 'Подтверждённый запрос выполнен. Подписку Google Play нужно отменить отдельно.',
+      deletionSent: 'Запрос получен. Проверьте почту и откройте ссылку подтверждения в течение 24 часов. Эта квитанция не подтверждает удаление. Запрос: ',
+      deletionQueued: 'Запрос получен, но письмо подтверждения пока не доставлено. Поддержка проверит его и повторит отправку. Эта квитанция не подтверждает удаление. Номер: ',
+      deletionCompleted: 'Аккаунт AstroGuide и связанные с ним данные безвозвратно удалены. Подписку Google Play нужно отменить отдельно.',
+      deletionNotFound: 'Совпадающий аккаунт не найден, поэтому ни один аккаунт не был удалён. Проверьте привязанный Google email или используйте аутентифицированное удаление в приложении. Эта статическая email-форма не принимает данные анонимного восстановления.',
       restored: 'Незаполненная форма восстановлена в этой вкладке.',
       invalid: 'Проверьте выделенные поля.',
       error: 'Сейчас отправить не удалось. Текст сохранён в этой вкладке — попробуйте ещё раз.',
@@ -155,15 +158,22 @@
 
     restore(form);
     var query = new URLSearchParams(window.location.search);
-    if (query.get('deleted') === '1' && form.name === 'account-deletion') {
+    if (query.get('deletion') === 'not_found' && form.name === 'account-deletion') {
       clearSaved(form);
-      announce(form, words.deletionDone, 'success');
+      announce(form, words.deletionNotFound, 'error');
+    } else if (query.get('deleted') === '1' && form.name === 'account-deletion') {
+      clearSaved(form);
+      announce(form, words.deletionCompleted, 'success');
     } else if (query.get('submitted') === '1') {
       clearSaved(form);
       var redirectedCopy = form.name === 'account-deletion'
         ? (query.get('verification') === 'queued' ? words.deletionQueued : words.deletionSent)
         : words.success;
-      announce(form, redirectedCopy + (query.get('request') || '—'), 'success');
+      announce(
+        form,
+        redirectedCopy + (query.get('request') || '—'),
+        form.name === 'account-deletion' ? 'info' : 'success'
+      );
     }
 
     form.addEventListener('input', function (event) {
@@ -224,7 +234,7 @@
         announce(
           form,
           successCopy + (body.requestId || '—'),
-          'success'
+          form.name === 'account-deletion' ? 'info' : 'success'
         );
       }).catch(function (error) {
         save(form);

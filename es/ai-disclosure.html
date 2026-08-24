@@ -109,6 +109,7 @@
 <p>Cada solicitud exige a OpenRouter el enrutamiento sin retención de datos (zero data retention) y prohíbe la recopilación de datos por el proveedor. La disponibilidad sigue dependiendo de que el proveedor elegido admita ese modo de privacidad.</p>
 
 <h2 id="data">Qué datos ve</h2>
+<p><strong>Antes de que empiece el procesamiento:</strong> cuando pulsas una acción que solicita contenido generado, AstroGuide envía los datos pertinentes indicados abajo por HTTPS a su backend y después a OpenRouter y al proveedor del modelo seleccionado. Esta transferencia ocurre antes de que pueda devolverse el texto generado. Si no solicitas una función de IA, no se realiza una solicitud de IA.</p>
 <p>El prompt enviado al modelo contiene, en líneas generales:</p>
 <ul>
 <li>Tus posiciones astrológicas calculadas (planeta, signo, grado, casa).</li>
@@ -116,7 +117,7 @@
 <li>Los tránsitos actuales para el período consultado.</li>
 <li>El idioma de la salida solicitada (en / ru / es).</li>
 <li>El tipo de lectura (diaria, semanal, mensual, natal, sinastría, tarot).</li>
-<li>Según la función: nombre mostrado, edad derivada de la fecha de nacimiento, fecha/hora/lugar de nacimiento, lugar actual, género, perfil de pareja o la pregunta que escribiste.</li>
+<li>Según la función: nombre mostrado, edad derivada de la fecha de nacimiento, fecha/hora/lugar de nacimiento, la ciudad o localidad actual aproximada que escribiste (no GPS), género, perfil de pareja o la pregunta que escribiste.</li>
 </ul>
 <p>El prompt <strong>no</strong> contiene el correo de tu cuenta, ID de Google, token de compra, token de notificaciones, entradas del diario ni historial analítico. Consulta la <a href="privacy.html">Política de privacidad</a> para proveedores y plazos.</p>
 
@@ -131,7 +132,7 @@
 </div></main>
 
 <footer class="site-footer"><div class="wrap footer-bottom">
-<span>AstroGuide · 2026</span>
+<span>Aurelia Labs LLC · AstroGuide · 2026</span>
 <span class="lang-switch"><a class="lang-switch__item" href="../en/ai-disclosure.html" hreflang="en">EN</a><a class="lang-switch__item lang-switch__item--active" aria-current="page">ES</a><a class="lang-switch__item" href="../ru/ai-disclosure.html" hreflang="ru">RU</a></span>
 </div></footer>
 

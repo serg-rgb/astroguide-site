@@ -109,6 +109,7 @@
 <p>Each request asks OpenRouter to use zero-data-retention routing and deny provider data collection. Availability still depends on the selected provider supporting that privacy mode.</p>
 
 <h2 id="data">What data it sees</h2>
+<p><strong>Before processing begins:</strong> when you tap an action that requests generated content, AstroGuide sends the relevant data below over HTTPS to its backend, then to OpenRouter and the selected model provider. This transfer happens before the generated text can be returned. If you do not request an AI feature, no AI request is made.</p>
 <p>The prompt sent to the model contains, roughly:</p>
 <ul>
 <li>Your computed astrological positions (planet, sign, degree, house).</li>
@@ -116,7 +117,7 @@
 <li>Current transits for the period being asked about.</li>
 <li>The locale of the requested output (en / ru / es).</li>
 <li>The reading type (daily, weekly, monthly, natal, synastry, tarot).</li>
-<li>Depending on the feature: your display name, age derived from birth date, birth date/time/place, current place, gender, a partner profile, or the question you typed.</li>
+<li>Depending on the feature: your display name, age derived from birth date, birth date/time/place, the approximate current city or town you typed (not GPS), gender, a partner profile, or the question you typed.</li>
 </ul>
 <p>The prompt does <strong>not</strong> contain your account email, Google account ID, purchase token, notification token, journal entries, or analytics history. See the <a href="privacy.html">Privacy Policy</a> for processors and retention.</p>
 
@@ -131,7 +132,7 @@
 </div></main>
 
 <footer class="site-footer"><div class="wrap footer-bottom">
-<span>AstroGuide · 2026</span>
+<span>Aurelia Labs LLC · AstroGuide · 2026</span>
 <span class="lang-switch"><a class="lang-switch__item lang-switch__item--active" aria-current="page">EN</a><a class="lang-switch__item" href="../es/ai-disclosure.html" hreflang="es">ES</a><a class="lang-switch__item" href="../ru/ai-disclosure.html" hreflang="ru">RU</a></span>
 </div></footer>
 

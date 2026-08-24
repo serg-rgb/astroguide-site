@@ -4,6 +4,7 @@
   "scripts": {
     "build": "npm run build:prototypes",
     "build:prototypes": "node scripts/build-prototypes.mjs",
+    "check:deletion": "node scripts/validate-deletion-contract.mjs",
     "check": "node --check landing.js && node --check forms-fallback.js"
   },
   "devDependencies": {

@@ -102,18 +102,19 @@
         <p>AstroGuide procesa los siguientes datos para prestar la app y operarla de forma segura:</p>
         <ul>
           <li><strong>Datos de nacimiento</strong> — fecha, hora (opcional) y lugar de nacimiento.</li>
+          <li><strong>Lugar actual (opcional)</strong> — ciudad o localidad aproximada que escribes para lecturas que dependen del lugar. AstroGuide no lee el GPS ni solicita permiso de ubicación de Android.</li>
           <li><strong>Nombre mostrado</strong> — cómo llamarte dentro de la app.</li>
           <li><strong>Entradas del diario</strong> — texto que escribes tú, en tu propio dispositivo.</li>
           <li><strong>Datos de cuenta</strong> — identificador de Google, correo y nombre mostrado si eliges iniciar sesión con Google.</li>
           <li><strong>Datos técnicos</strong> — identificador de instalación, token de sesión firmado, idioma/versión, token de notificaciones si están activadas y estado/token de compra al usar Google Play Billing.</li>
-          <li><strong>Análisis de uso opcional</strong> — está desactivado por defecto y solo se activa con tu consentimiento en Ajustes. Incluye eventos permitidos como apertura, vista de pantalla/paywall y resultado de compra o restauración.</li>
+          <li><strong>Análisis de uso</strong> — la versión 1.0.1 (version code 4) activa por defecto el análisis propio de eventos permitidos y permite desactivarlo en Ajustes. La versión 1.0.2 (version code 5) y posteriores lo mantienen desactivado hasta que das tu consentimiento expreso. Como 1.0.1 puede seguir instalada, declaramos estos datos como recopilados. Incluye apertura de la app, vista de pantalla/paywall y resultado de compra o restauración.</li>
           <li><strong>Reportes de contenido de IA</strong> — tipo/identificador del contenido, motivo elegido y hasta 500 caracteres de contexto opcional cuando eliges Reportar.</li>
           <li><strong>Solicitudes de soporte y eliminación</strong> — correo, nombre opcional, tema/motivo y mensaje enviados mediante el sitio.</li>
         </ul>
-        <p><strong>No</strong> recopilamos contactos, ubicación (más allá de la ciudad de nacimiento), fotos, micrófono, calendario, historial de navegación, ni nada de tus otras apps.</p>
+        <p><strong>No</strong> accedemos a la ubicación precisa del dispositivo, GPS, ubicación en segundo plano, contactos, fotos, micrófono, calendario, historial de navegación ni datos de tus otras apps. Solo procesamos el lugar de nacimiento y la ciudad/localidad actual aproximada y opcional que escribes tú.</p>
 
         <h2 id="why">Por qué lo recopilamos</h2>
-        <p>Los datos de nacimiento y el nombre se usan para calcular y redactar lecturas. El diario permanece local. Los datos de cuenta y compra restauran tu carta y acceso en otros dispositivos; se requiere iniciar sesión con Google antes de comprar para poder recuperar el acceso tras reinstalar. Los datos de notificaciones entregan los mensajes que activas. El análisis opcional muestra qué flujos funcionan; nunca incluye nombres, datos de nacimiento, texto de diario/chat, correo, tokens de compra, URL ni mensajes de error. Los reportes se usan para revisión de seguridad y prevención de abuso.</p>
+        <p>Los datos de nacimiento, el nombre y el lugar actual opcional se usan para calcular y redactar la lectura que solicitas. El diario permanece local. Los datos de cuenta y compra restauran tu carta y acceso en otros dispositivos; se requiere iniciar sesión con Google antes de comprar para poder recuperar el acceso tras reinstalar. Los datos de notificaciones entregan los mensajes que activas. El análisis muestra qué flujos funcionan; nunca incluye nombres, datos de nacimiento, lugar actual, texto de diario/chat, correo, tokens de compra, URL ni mensajes de error. Los reportes se usan para revisión de seguridad y prevención de abuso.</p>
         <blockquote>Si un dato no es necesario para que la app cumpla su función, no lo pedimos.</blockquote>
 
         <h2 id="storage">Dónde vive</h2>
@@ -124,9 +125,10 @@
         <p>Las copias cifradas del servidor para recuperación ante desastres se guardan separadas del sistema activo, nunca se usan para análisis y caducan automáticamente en un máximo de 7 días. Los datos eliminados del servicio activo solo pueden permanecer dentro de esas copias cifradas inaccesibles hasta que termine ese plazo.</p>
 
         <h2 id="third-parties">Terceros</h2>
+        <p><strong>Antes del procesamiento por IA:</strong> cuando pulsas una acción que solicita una lectura generada, los datos pertinentes indicados abajo se envían por HTTPS al backend de AstroGuide y después a OpenRouter y al proveedor del modelo seleccionado, antes de que pueda devolverse texto generado. Si no solicitas una función generada por IA, esa solicitud de IA no se realiza.</p>
         <p>Usamos los siguientes servicios externos:</p>
         <ul>
-          <li><strong>OpenRouter y el proveedor de modelo seleccionado</strong> — reciben datos estructurados de la carta y, según la función, pueden recibir nombre mostrado, edad o fecha/hora/lugar de nacimiento, lugar actual, género, perfil de pareja y una pregunta escrita. Cada solicitud exige enrutamiento sin retención de datos (zero data retention) y prohíbe la recopilación de datos por el proveedor. No reciben correo, ID de cuenta, diario, token de compra/notificación ni historial analítico.</li>
+          <li><strong>OpenRouter y el proveedor de modelo seleccionado</strong> — reciben datos estructurados de la carta y, según la función, pueden recibir nombre mostrado, edad o fecha/hora/lugar de nacimiento, la ciudad/localidad actual aproximada que escribiste, género, perfil de pareja y una pregunta escrita. Cada solicitud exige enrutamiento sin retención de datos (zero data retention) y prohíbe la recopilación de datos por el proveedor. No reciben correo, ID de cuenta, diario, token de compra/notificación ni historial analítico.</li>
           <li><strong>OpenStreetMap Nominatim</strong> — recibe el texto de búsqueda del lugar de nacimiento para resolver coordenadas.</li>
           <li><strong>Google Play Billing</strong> — gestiona las compras de suscripción. Reciben un token de compra; nosotros recibimos una confirmación. Tu carta nunca la ven.</li>
           <li><strong>Inicio de sesión con Google</strong> — verifica tu identidad solo si decides iniciar sesión.</li>
@@ -147,10 +149,10 @@
         <p>Si vives en una jurisdicción con derechos más fuertes (GDPR, CCPA, LGPD u otras), se aplican.</p>
 
         <h2 id="children">Menores</h2>
-        <p>AstroGuide no está pensada para menores de 13 años. No recopilamos a sabiendas datos de menores de 13 años. Si descubrimos que lo hemos hecho, los eliminamos.</p>
+        <p>AstroGuide está destinada únicamente a personas adultas de 18 años o más. Si eres menor de 18 años, no uses la app. No recopilamos a sabiendas datos personales de menores de 18 años; si descubrimos que lo hemos hecho, los eliminamos.</p>
 
         <h2 id="contact">Contacto</h2>
-        <p>Preguntas, solicitudes o quejas: <a href="support.html">formulario de soporte</a>.</p>
+        <p>Responsable del tratamiento y desarrollador: <strong>Aurelia Labs LLC</strong>, 30 N Gould St, Sheridan, WY 82801-6317, Estados Unidos. Preguntas, solicitudes o quejas: <a href="support.html">formulario de soporte</a>.</p>
 
         <hr/>
         <p><em>Esta política puede cambiar. Cuando cambie, mostraremos aquí la nueva fecha de vigencia y te avisaremos en la app la próxima vez que la abras. Los cambios materiales requerirán consentimiento renovado.</em></p>
@@ -161,7 +163,7 @@
 
 <footer class="site-footer">
   <div class="wrap footer-bottom">
-    <span>AstroGuide · 2026</span>
+    <span>Aurelia Labs LLC · AstroGuide · 2026</span>
     <span class="lang-switch"><a class="lang-switch__item" href="../en/privacy.html" hreflang="en">EN</a><a class="lang-switch__item lang-switch__item--active" aria-current="page">ES</a><a class="lang-switch__item" href="../ru/privacy.html" hreflang="ru">RU</a></span>
   </div>
 </footer>
