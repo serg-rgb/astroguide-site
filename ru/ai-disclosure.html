@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ru" data-screen-label="06 Об AI">
 <head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8"/><meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; base-uri &#39;self&#39;; object-src &#39;none&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src &#39;self&#39; data: blob:; media-src &#39;self&#39;; connect-src &#39;self&#39; https://api.astroguides.app; frame-src &#39;self&#39;; form-action &#39;self&#39; https://api.astroguides.app; upgrade-insecure-requests"/><meta name="referrer" content="strict-origin-when-cross-origin"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Об AI · AstroGuide</title>
 <meta name="description" content="Как AstroGuide использует языковые модели — что они делают и чего никогда не делают."/>
   <link rel="canonical" href="https://astroguides.app/ru/ai-disclosure.html"/>
@@ -61,14 +61,14 @@
 <header class="legal__head">
 <div class="legal__eyebrow">ЧЕСТНАЯ ЗАМЕТКА</div>
 <h1 class="legal__title">Как мы используем AI</h1>
-<p class="legal__updated">Вступает в силу 18 августа 2026</p>
+<p class="legal__updated">Вступает в силу 24 августа 2026</p>
 </header>
 
 <div class="legal__body">
 <aside class="legal__toc">
 <div class="legal__toc-title">На этой странице</div>
 <a href="#does">Что AI делает</a>
-<a href="#doesnt">Чего никогда не делает</a>
+<a href="#doesnt">Ограничения и защитные меры</a>
 <a href="#models">Модели, которые используем</a>
 <a href="#data">Какие данные он видит</a>
 <a href="#wrong">Когда он ошибается</a>
@@ -88,12 +88,12 @@
 </ul>
 <p>Это всё. Сама астрология — какая планета где, какой аспект и с каким орбисом, в каком знаке падает куспид дома — рассчитывается Swiss Ephemeris до того, как AI что-либо увидит.</p>
 
-<h2 id="doesnt">Чего никогда не делает</h2>
+<h2 id="doesnt">Ограничения и защитные меры</h2>
 <ul>
 <li><strong>Не рассчитывает карту.</strong> Геометрия зафиксирована до того, как он подключается.</li>
-<li><strong>Не выдумывает аспекты, транзиты и позиции планет.</strong> Если этого не было в промпте, проза не может утверждать обратное.</li>
-<li><strong>Не предсказывает конкретные будущие события.</strong> Никаких «в четверг ты встретишь высокого незнакомца».</li>
-<li><strong>Не даёт медицинских, психологических, финансовых или юридических советов.</strong> System prompt это явно запрещает.</li>
+<li><strong>Получает инструкцию использовать только переданные аспекты, транзиты и позиции планет.</strong> Генеративная модель всё равно может ошибиться, поэтому источником истины остаются рассчитанные данные карты.</li>
+<li><strong>Получает инструкцию не предсказывать конкретные будущие события.</strong> Никаких «в четверг ты встретишь высокого незнакомца».</li>
+<li><strong>Получает инструкцию не давать медицинских, психологических, финансовых или юридических советов.</strong> Рискованные и кризисные формулировки перехватываются до генерации, но ни одна автоматическая защита не безошибочна.</li>
 <li><strong>Не получает email аккаунта, Google ID, токен покупки, токен уведомлений или записи дневника.</strong></li>
 <li><strong>Не является профессиональным консультантом.</strong> Генерируемый текст может ошибаться и не заменяет медицинскую, психологическую, финансовую или юридическую помощь.</li>
 </ul>
@@ -106,6 +106,7 @@
 <li><strong>Claude Sonnet 4.6</strong> — используется для отдельных длинных чтений, например раскладов Таро.</li>
 </ul>
 <p>Мы выбираем конкретные зафиксированные версии. Если меняем модели — отметим это здесь.</p>
+<p>Каждый запрос требует от OpenRouter маршрутизацию без хранения данных (zero data retention) и запрет сбора данных провайдером. Доступность всё равно зависит от поддержки этого режима выбранным провайдером.</p>
 
 <h2 id="data">Какие данные он видит</h2>
 <p>В промпте к модели — примерно следующее:</p>

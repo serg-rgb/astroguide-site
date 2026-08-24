@@ -2,6 +2,8 @@
 <html lang="en" data-screen-label="02 Privacy">
 <head>
   <meta charset="utf-8"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; base-uri &#39;self&#39;; object-src &#39;none&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src &#39;self&#39; data: blob:; media-src &#39;self&#39;; connect-src &#39;self&#39; https://api.astroguides.app; frame-src &#39;self&#39;; form-action &#39;self&#39; https://api.astroguides.app; upgrade-insecure-requests"/>
+  <meta name="referrer" content="strict-origin-when-cross-origin"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Privacy · AstroGuide</title>
   <meta name="description" content="How AstroGuide collects, stores, and protects your birth data and journal entries."/>
@@ -78,7 +80,7 @@
     <header class="legal__head">
       <div class="legal__eyebrow">LEGAL</div>
       <h1 class="legal__title">Privacy Policy</h1>
-      <div class="legal__updated">Effective August 18, 2026</div>
+      <div class="legal__updated">Effective August 24, 2026</div>
     </header>
 
     <div class="legal__body">
@@ -104,7 +106,7 @@
           <li><strong>Journal entries</strong> — text you write yourself, on your own device.</li>
           <li><strong>Account data</strong> — Google account identifier, email, and display name if you choose Sign in with Google.</li>
           <li><strong>Technical data</strong> — an installation identifier, signed session token, app language/version, notification token if enabled, and purchase status/token when you use Google Play Billing.</li>
-          <li><strong>Optional usage analytics</strong> — allowlisted events such as app open, screen view, paywall view, purchase outcome, and restore outcome. You can turn this off in Settings.</li>
+          <li><strong>Optional usage analytics</strong> — off by default and enabled only with your Settings opt-in. It covers allowlisted events such as app open, screen view, paywall view, purchase outcome, and restore outcome.</li>
           <li><strong>AI content reports</strong> — the content type/identifier, selected reason and up to 500 characters of optional context when you choose Report.</li>
           <li><strong>Support and deletion requests</strong> — email, optional name, topic/reason, and the message you submit through the website.</li>
         </ul>
@@ -116,13 +118,14 @@
 
         <h2 id="storage">Where it lives</h2>
         <p>Journal entries and saved partner details are stored in Android's private app storage. AstroGuide disables Android cloud backup and device transfer for all app data so deleted birth/journal data cannot return from a stale backup. Paid access is recovered through the signed Google-linked account instead.</p>
-        <p>Birth data, calculated charts, generated readings, account links, notification registration, and purchase entitlement data are sent over HTTPS to our backend because those features cannot operate only on the device. Forecast caches normally expire after seven days; AI content reports are retained up to 180 days; aggregate analytics up to 400 days; support-form queue records up to 90 days; and uncompleted deletion requests up to 45 days. Chart, account, notification, and entitlement records remain while the account is active or until deletion/opt-out requires removal. During erasure, an account identifier may remain in a cleanup job for up to 24 hours so a second pass catches already-running requests. After that, only a one-way hashed session-revocation marker remains for the configured session lifetime plus one day (currently up to 366 days), preventing old signed tokens from recreating the account.</p>
+        <p>Birth data, calculated charts, generated readings, account links, notification registration, and purchase entitlement data are sent over HTTPS to our backend because those features cannot operate only on the device. Forecast caches normally expire after seven days; the optional offline analytics queue contains at most 100 allowlisted events and expires after seven days; AI content reports are retained up to 180 days; aggregate analytics up to 400 days; support-form queue records up to 90 days; and uncompleted deletion requests up to 45 days. Chart, account, notification, and entitlement records remain while the account is active or until deletion/opt-out requires removal. During erasure, an account identifier may remain in a cleanup job for up to 24 hours so delayed passes catch already-running requests. After that, only a one-way hashed session-revocation marker remains for the configured session lifetime plus one day (currently up to 91 days), preventing old signed tokens from recreating the account.</p>
         <p>Analytics stores daily counters only. An account identifier is used transiently to calculate an irreversible, day-specific active-user estimate and is not stored as an analytics event row.</p>
+        <p>Encrypted server disaster-recovery backups are stored separately from the live system, are never used for analytics, and expire automatically within seven days. Data deleted from the live service may remain only inside those inaccessible encrypted backups until that retention period ends.</p>
 
         <h2 id="third-parties">Third parties</h2>
         <p>We use the following external services:</p>
         <ul>
-          <li><strong>OpenRouter and the selected language-model provider</strong> — receive structured chart data and, depending on the requested feature, may receive display name, age or birth date/time/place, current place, gender, partner profile and a question you typed. They do not receive your email, account id, journal entries, purchase token, notification token or analytics history.</li>
+          <li><strong>OpenRouter and the selected language-model provider</strong> — receive structured chart data and, depending on the requested feature, may receive display name, age or birth date/time/place, current place, gender, partner profile and a question you typed. Every request asks the provider to use zero-data-retention routing and deny data collection. They do not receive your email, account id, journal entries, purchase token, notification token or analytics history.</li>
           <li><strong>OpenStreetMap Nominatim</strong> — receives the birth-place search text needed to resolve coordinates for a chart.</li>
           <li><strong>Google Play Billing</strong> — handles subscription purchases. They receive a purchase token; we receive a confirmation. They never see your chart.</li>
           <li><strong>Google Sign-In</strong> — verifies your identity only if you choose to sign in.</li>
@@ -137,13 +140,13 @@
           <li>Request a copy of the data linked to your signed-in email through support.</li>
           <li>Correct it.</li>
           <li>Delete it — see <a href="account-deletion.html">Account deletion</a>.</li>
-          <li>Turn usage analytics off in Settings and notifications off in Settings or Android system settings.</li>
+          <li>Choose whether to enable usage analytics, revoke that choice at any time in Settings, and turn notifications off in Settings or Android system settings.</li>
           <li>Restore eligible Google Play purchases after signing in with the same linked Google account.</li>
         </ul>
         <p>If you live in a jurisdiction with stronger rights (GDPR, CCPA, LGPD, others), they apply.</p>
 
         <h2 id="children">Children</h2>
-        <p>AstroGuide is not intended for use by anyone under 16. We don't knowingly collect data from children. If we discover we have, we delete it.</p>
+        <p>AstroGuide is not intended for use by anyone under 13. We don't knowingly collect data from children under 13. If we discover that we have, we delete it.</p>
 
         <h2 id="contact">Contact</h2>
         <p>Questions, requests, or complaints: <a href="support.html">support form</a>.</p>

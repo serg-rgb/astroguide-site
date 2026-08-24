@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" data-screen-label="06 AI disclosure">
 <head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8"/><meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; base-uri &#39;self&#39;; object-src &#39;none&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src &#39;self&#39; data: blob:; media-src &#39;self&#39;; connect-src &#39;self&#39; https://api.astroguides.app; frame-src &#39;self&#39;; form-action &#39;self&#39; https://api.astroguides.app; upgrade-insecure-requests"/><meta name="referrer" content="strict-origin-when-cross-origin"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>AI Disclosure · AstroGuide</title>
 <meta name="description" content="How AstroGuide uses language models — what they do, what they never do."/>
   <link rel="canonical" href="https://astroguides.app/en/ai-disclosure.html"/>
@@ -61,14 +61,14 @@
 <header class="legal__head">
 <div class="legal__eyebrow">HONEST NOTE</div>
 <h1 class="legal__title">How we use AI</h1>
-<p class="legal__updated">Effective August 18, 2026</p>
+<p class="legal__updated">Effective August 24, 2026</p>
 </header>
 
 <div class="legal__body">
 <aside class="legal__toc">
 <div class="legal__toc-title">On this page</div>
 <a href="#does">What the AI does</a>
-<a href="#doesnt">What it never does</a>
+<a href="#doesnt">Guardrails and limits</a>
 <a href="#models">Models we use</a>
 <a href="#data">What data it sees</a>
 <a href="#wrong">When it gets it wrong</a>
@@ -88,12 +88,12 @@
 </ul>
 <p>That's it. The astrology itself — which planet is where, which aspect at what orb, which house cusp falls in which sign — is computed by Swiss Ephemeris before any AI sees anything.</p>
 
-<h2 id="doesnt">What it never does</h2>
+<h2 id="doesnt">Guardrails and limits</h2>
 <ul>
 <li><strong>It does not calculate the chart.</strong> The geometry is fixed before it gets involved.</li>
-<li><strong>It does not invent aspects, transits, or planetary positions.</strong> If the prompt didn't contain it, the prose can't claim it.</li>
-<li><strong>It does not predict specific future events.</strong> No "you will meet someone tall on Thursday".</li>
-<li><strong>It does not give medical, mental-health, financial, or legal advice.</strong> The system prompt explicitly forbids it.</li>
+<li><strong>It is instructed to use only the supplied aspects, transits, and planetary positions.</strong> A generative model can still make a mistake, so calculated chart data remains the source of truth.</li>
+<li><strong>It is instructed not to predict specific future events.</strong> No "you will meet someone tall on Thursday".</li>
+<li><strong>It is instructed not to give medical, mental-health, financial, or legal advice.</strong> High-risk and crisis wording is intercepted before generation, but no automated safeguard is infallible.</li>
 <li><strong>It does not receive your account email, Google account ID, purchase token, notification token, or journal entries.</strong></li>
 <li><strong>It is not a professional adviser.</strong> Generated text can be wrong and must not replace medical, mental-health, financial, or legal advice.</li>
 </ul>
@@ -106,6 +106,7 @@
 <li><strong>Claude Sonnet 4.6</strong> — used for selected longer readings such as tarot spreads.</li>
 </ul>
 <p>We choose specific frozen versions. If we change models, we'll note it here.</p>
+<p>Each request asks OpenRouter to use zero-data-retention routing and deny provider data collection. Availability still depends on the selected provider supporting that privacy mode.</p>
 
 <h2 id="data">What data it sees</h2>
 <p>The prompt sent to the model contains, roughly:</p>

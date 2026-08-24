@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es" data-screen-label="06 Sobre la IA">
 <head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8"/><meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; base-uri &#39;self&#39;; object-src &#39;none&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src &#39;self&#39; data: blob:; media-src &#39;self&#39;; connect-src &#39;self&#39; https://api.astroguides.app; frame-src &#39;self&#39;; form-action &#39;self&#39; https://api.astroguides.app; upgrade-insecure-requests"/><meta name="referrer" content="strict-origin-when-cross-origin"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Sobre la IA · AstroGuide</title>
 <meta name="description" content="Cómo AstroGuide usa los modelos de lenguaje — qué hacen y qué nunca hacen."/>
   <link rel="canonical" href="https://astroguides.app/es/ai-disclosure.html"/>
@@ -61,14 +61,14 @@
 <header class="legal__head">
 <div class="legal__eyebrow">NOTA HONESTA</div>
 <h1 class="legal__title">Cómo usamos la IA</h1>
-<p class="legal__updated">Vigente desde el 18 de agosto de 2026</p>
+<p class="legal__updated">Vigente desde el 24 de agosto de 2026</p>
 </header>
 
 <div class="legal__body">
 <aside class="legal__toc">
 <div class="legal__toc-title">En esta página</div>
 <a href="#does">Qué hace la IA</a>
-<a href="#doesnt">Qué nunca hace</a>
+<a href="#doesnt">Límites y protecciones</a>
 <a href="#models">Modelos que usamos</a>
 <a href="#data">Qué datos ve</a>
 <a href="#wrong">Cuando se equivoca</a>
@@ -88,12 +88,12 @@
 </ul>
 <p>Eso es todo. La astrología en sí — qué planeta está dónde, qué aspecto con qué orbe, qué cúspide de casa cae en qué signo — la calcula Swiss Ephemeris antes de que ninguna IA vea nada.</p>
 
-<h2 id="doesnt">Qué nunca hace</h2>
+<h2 id="doesnt">Límites y protecciones</h2>
 <ul>
 <li><strong>No calcula la carta.</strong> La geometría está fijada antes de que se involucre.</li>
-<li><strong>No inventa aspectos, tránsitos ni posiciones planetarias.</strong> Si el prompt no lo contenía, la prosa no puede afirmarlo.</li>
-<li><strong>No predice eventos futuros concretos.</strong> Nada de «conocerás a alguien alto el jueves».</li>
-<li><strong>No da consejos médicos, de salud mental, financieros ni legales.</strong> El system prompt lo prohíbe explícitamente.</li>
+<li><strong>Recibe la instrucción de usar solo los aspectos, tránsitos y posiciones planetarias proporcionados.</strong> Un modelo generativo aún puede equivocarse, por lo que los datos calculados de la carta siguen siendo la fuente de verdad.</li>
+<li><strong>Recibe la instrucción de no predecir eventos futuros concretos.</strong> Nada de «conocerás a alguien alto el jueves».</li>
+<li><strong>Recibe la instrucción de no dar consejos médicos, de salud mental, financieros ni legales.</strong> Las frases de alto riesgo o crisis se interceptan antes de generar, pero ninguna protección automática es infalible.</li>
 <li><strong>No recibe el correo de tu cuenta, ID de Google, token de compra, token de notificaciones ni entradas del diario.</strong></li>
 <li><strong>No es un asesor profesional.</strong> El texto generado puede equivocarse y no sustituye consejo médico, de salud mental, financiero ni legal.</li>
 </ul>
@@ -106,6 +106,7 @@
 <li><strong>Claude Sonnet 4.6</strong> — se usa en algunas lecturas largas, como tiradas de tarot.</li>
 </ul>
 <p>Elegimos versiones específicas y fijas. Si cambiamos de modelo, lo anotaremos aquí.</p>
+<p>Cada solicitud exige a OpenRouter el enrutamiento sin retención de datos (zero data retention) y prohíbe la recopilación de datos por el proveedor. La disponibilidad sigue dependiendo de que el proveedor elegido admita ese modo de privacidad.</p>
 
 <h2 id="data">Qué datos ve</h2>
 <p>El prompt enviado al modelo contiene, en líneas generales:</p>

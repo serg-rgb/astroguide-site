@@ -2,6 +2,8 @@
 <html lang="es" data-screen-label="02 Privacidad">
 <head>
   <meta charset="utf-8"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; base-uri &#39;self&#39;; object-src &#39;none&#39;; script-src &#39;self&#39; &#39;unsafe-inline&#39;; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src &#39;self&#39; data: blob:; media-src &#39;self&#39;; connect-src &#39;self&#39; https://api.astroguides.app; frame-src &#39;self&#39;; form-action &#39;self&#39; https://api.astroguides.app; upgrade-insecure-requests"/>
+  <meta name="referrer" content="strict-origin-when-cross-origin"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Privacidad · AstroGuide</title>
   <meta name="description" content="Cómo AstroGuide recopila, almacena y protege tus datos de nacimiento y entradas del diario."/>
@@ -78,7 +80,7 @@
     <header class="legal__head">
       <div class="legal__eyebrow">LEGAL</div>
       <h1 class="legal__title">Política de Privacidad</h1>
-      <div class="legal__updated">Vigente desde el 18 de agosto de 2026</div>
+      <div class="legal__updated">Vigente desde el 24 de agosto de 2026</div>
     </header>
 
     <div class="legal__body">
@@ -104,7 +106,7 @@
           <li><strong>Entradas del diario</strong> — texto que escribes tú, en tu propio dispositivo.</li>
           <li><strong>Datos de cuenta</strong> — identificador de Google, correo y nombre mostrado si eliges iniciar sesión con Google.</li>
           <li><strong>Datos técnicos</strong> — identificador de instalación, token de sesión firmado, idioma/versión, token de notificaciones si están activadas y estado/token de compra al usar Google Play Billing.</li>
-          <li><strong>Análisis de uso opcional</strong> — eventos permitidos como apertura, vista de pantalla/paywall y resultado de compra o restauración. Puedes desactivarlo en Ajustes.</li>
+          <li><strong>Análisis de uso opcional</strong> — está desactivado por defecto y solo se activa con tu consentimiento en Ajustes. Incluye eventos permitidos como apertura, vista de pantalla/paywall y resultado de compra o restauración.</li>
           <li><strong>Reportes de contenido de IA</strong> — tipo/identificador del contenido, motivo elegido y hasta 500 caracteres de contexto opcional cuando eliges Reportar.</li>
           <li><strong>Solicitudes de soporte y eliminación</strong> — correo, nombre opcional, tema/motivo y mensaje enviados mediante el sitio.</li>
         </ul>
@@ -116,13 +118,14 @@
 
         <h2 id="storage">Dónde vive</h2>
         <p>El diario y los perfiles de pareja se almacenan en el espacio privado de Android. AstroGuide desactiva la copia en la nube y la transferencia de todos los datos de la app para que datos borrados no vuelvan desde una copia antigua. El acceso de pago se recupera mediante la cuenta de Google vinculada.</p>
-        <p>Los datos de nacimiento, cartas calculadas, lecturas generadas, vínculos de cuenta, registro de notificaciones y acceso por compra se envían por HTTPS a nuestro backend porque esas funciones no pueden operar solo en el dispositivo. La caché de pronósticos suele caducar a los 7 días; los reportes de IA se conservan hasta 180 días; el análisis agregado hasta 400 días; la cola de soporte hasta 90 días; y las solicitudes de eliminación pendientes hasta 45 días. Carta, cuenta, notificaciones y acceso permanecen mientras la cuenta esté activa o hasta su eliminación. Durante el borrado, un identificador puede permanecer hasta 24 horas en una tarea de limpieza para capturar escrituras de solicitudes ya activas. Después solo queda un marcador de revocación con hash unidireccional durante la vigencia de la sesión más un día (actualmente hasta 366 días), para impedir que un token antiguo recree la cuenta.</p>
+        <p>Los datos de nacimiento, cartas calculadas, lecturas generadas, vínculos de cuenta, registro de notificaciones y acceso por compra se envían por HTTPS a nuestro backend porque esas funciones no pueden operar solo en el dispositivo. La caché de pronósticos suele caducar a los 7 días; la cola opcional de análisis sin conexión contiene como máximo 100 eventos permitidos y caduca a los 7 días; los reportes de IA se conservan hasta 180 días; el análisis agregado hasta 400 días; la cola de soporte hasta 90 días; y las solicitudes de eliminación pendientes hasta 45 días. Carta, cuenta, notificaciones y acceso permanecen mientras la cuenta esté activa o hasta su eliminación. Durante el borrado, un identificador puede permanecer hasta 24 horas en una tarea de limpieza para que las pasadas diferidas capturen escrituras de solicitudes ya activas. Después solo queda un marcador de revocación con hash unidireccional durante la vigencia de la sesión más un día (actualmente hasta 91 días), para impedir que un token antiguo recree la cuenta.</p>
         <p>El análisis guarda solo contadores diarios. El identificador de cuenta se usa de forma transitoria para una estimación irreversible y específica de usuarios activos por día; no se conserva como fila de evento.</p>
+        <p>Las copias cifradas del servidor para recuperación ante desastres se guardan separadas del sistema activo, nunca se usan para análisis y caducan automáticamente en un máximo de 7 días. Los datos eliminados del servicio activo solo pueden permanecer dentro de esas copias cifradas inaccesibles hasta que termine ese plazo.</p>
 
         <h2 id="third-parties">Terceros</h2>
         <p>Usamos los siguientes servicios externos:</p>
         <ul>
-          <li><strong>OpenRouter y el proveedor de modelo seleccionado</strong> — reciben datos estructurados de la carta y, según la función, pueden recibir nombre mostrado, edad o fecha/hora/lugar de nacimiento, lugar actual, género, perfil de pareja y una pregunta escrita. No reciben correo, ID de cuenta, diario, token de compra/notificación ni historial analítico.</li>
+          <li><strong>OpenRouter y el proveedor de modelo seleccionado</strong> — reciben datos estructurados de la carta y, según la función, pueden recibir nombre mostrado, edad o fecha/hora/lugar de nacimiento, lugar actual, género, perfil de pareja y una pregunta escrita. Cada solicitud exige enrutamiento sin retención de datos (zero data retention) y prohíbe la recopilación de datos por el proveedor. No reciben correo, ID de cuenta, diario, token de compra/notificación ni historial analítico.</li>
           <li><strong>OpenStreetMap Nominatim</strong> — recibe el texto de búsqueda del lugar de nacimiento para resolver coordenadas.</li>
           <li><strong>Google Play Billing</strong> — gestiona las compras de suscripción. Reciben un token de compra; nosotros recibimos una confirmación. Tu carta nunca la ven.</li>
           <li><strong>Inicio de sesión con Google</strong> — verifica tu identidad solo si decides iniciar sesión.</li>
@@ -137,13 +140,13 @@
           <li>Solicitar a soporte una copia de los datos vinculados al correo de tu cuenta.</li>
           <li>Corregirlo.</li>
           <li>Eliminarlo — ver <a href="account-deletion.html">Eliminación de cuenta</a>.</li>
-          <li>Desactivar el análisis en Ajustes y las notificaciones en la app o en los ajustes de Android.</li>
+          <li>Elegir si activas el análisis, retirar ese consentimiento en cualquier momento desde Ajustes y desactivar las notificaciones en la app o en los ajustes de Android.</li>
           <li>Restaurar compras elegibles de Google Play tras iniciar sesión con la misma cuenta de Google vinculada.</li>
         </ul>
         <p>Si vives en una jurisdicción con derechos más fuertes (GDPR, CCPA, LGPD u otras), se aplican.</p>
 
         <h2 id="children">Menores</h2>
-        <p>AstroGuide no está pensada para menores de 16 años. No recopilamos a sabiendas datos de menores. Si descubrimos que lo hemos hecho, los eliminamos.</p>
+        <p>AstroGuide no está pensada para menores de 13 años. No recopilamos a sabiendas datos de menores de 13 años. Si descubrimos que lo hemos hecho, los eliminamos.</p>
 
         <h2 id="contact">Contacto</h2>
         <p>Preguntas, solicitudes o quejas: <a href="support.html">formulario de soporte</a>.</p>
