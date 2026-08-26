@@ -943,6 +943,24 @@ a.store-badge:hover {
   text-transform: uppercase;
   color: var(--text-faint);
 }
+
+.footer-attribution {
+  margin: var(--sp-3) 0 0;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  line-height: 1.55;
+}
+
+.footer-attribution a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.footer-attribution a:hover,
+.footer-attribution a:focus-visible {
+  color: var(--gold);
+}
 /* Legacy footer-bottom__lang superseded by .lang-switch (defined later). */
 
 /* ═══════════ LEGAL PAGES ═══════════ */

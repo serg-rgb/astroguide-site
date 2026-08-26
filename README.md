@@ -101,7 +101,7 @@ Production SEO metadata is intentionally absolute:
 - `2k_moon.jpg` — Lunar surface, Clementine data (NASA / public domain via Wikimedia Commons)
 - `2k_jupiter.jpg` — Jupiter cylindrical map (Solar System Scope, CC-BY-4.0)
 
-**Attribution required**: Solar System Scope textures are CC-BY-4.0 from <https://www.solarsystemscope.com/textures/>. Add an attribution line to the colophon or `/about` in the final site.
+**Attribution**: Solar System Scope textures are CC-BY-4.0 from <https://www.solarsystemscope.com/textures/>. The localized landing-page footers contain the required source and license links; `npm run check:site` prevents their accidental removal.
 
 Production pages use the 512px WebP variants in `planets/optimized/`; the original
 files stay in the repository for attribution/source fidelity. All planet motion is
@@ -148,7 +148,9 @@ disabled to avoid continuous GPU work on mobile devices.
   policy for hosts that support this file (for example Cloudflare Pages). GitHub
   Pages ignores `_headers`, so configure the same values at a CDN/reverse proxy
   before public launch; `frame-ancestors 'self'` is intentional because the
-  prototype shells are embedded by the same origin.
+  prototype shells are embedded by the same origin. The mandatory migration
+  and verification procedure is in `SECURITY_HEADERS_DEPLOYMENT.md`; run
+  `npm run check:live-headers` after every production deployment.
 - The `og-image.png` is referenced from `<meta property="og:image">` because Twitter/X, Facebook, and LinkedIn do not reliably parse SVG previews.
 - Do not reintroduce a client-side locale redirect at `/`. If the Next.js port adds language detection, use a server-side redirect only after deciding whether `/` should remain the public x-default canonical.
 

@@ -5,7 +5,9 @@
     "build": "npm run build:prototypes",
     "build:prototypes": "node scripts/build-prototypes.mjs",
     "check:deletion": "node scripts/validate-deletion-contract.mjs",
-    "check": "node --check landing.js && node --check forms-fallback.js"
+    "check:site": "node scripts/validate-public-site.mjs",
+    "check:live-headers": "node scripts/verify-live-security-headers.mjs",
+    "check": "node --check landing.js && node --check forms-fallback.js && npm run check:deletion && npm run check:site"
   },
   "devDependencies": {
     "esbuild": "0.25.8"
